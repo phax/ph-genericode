@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+        	Genericode File Tax TypeCode
+        	
+        	Oriol Bausà
+
+     -->
+<CodeList xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ ../xsd/genericode.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+  <Identification xmlns="">
+    <ShortName>Tax TypeCode</ShortName>
+    <Version>1.0</Version>
+    <CanonicalUri>NES</CanonicalUri>
+    <CanonicalVersionUri>NES-1.0</CanonicalVersionUri>
+    <LocationUri>http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/TaxTypeCode-2.0.gc</LocationUri>
+  </Identification>
+  <ColumnSet xmlns="">
+    <Column Id="code" Use="required">
+      <ShortName>Code</ShortName>
+      <Data Type="normalizedString"/>
+    </Column>
+    <Column Id="name" Use="optional">
+      <ShortName>Name</ShortName>
+      <Data Type="string"/>
+    </Column>
+    <Key Id="codeKey">
+      <ShortName>CodeKey</ShortName>
+      <ColumnRef Ref="code"/>
+    </Key>
+  </ColumnSet>
+  <SimpleCodeList xmlns="">
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>StandardRated</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>The tax specified by the Tax Scheme attracts VAT at standard
+rate.</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ZeroRated</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>The tax specified by the Tax Scheme attracts VAT at zero rate (0%) or is VAT exempt.</SimpleValue>
+      </Value>
+    </Row>
+  </SimpleCodeList>
+</CodeList>

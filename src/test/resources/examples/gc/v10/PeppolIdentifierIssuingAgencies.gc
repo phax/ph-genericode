@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:CodeList xmlns:ns2="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+  <Annotation>
+    <AppInfo>
+      <ns3:info xmlns:ns3="urn:phloc.com:schemas:genericode:ext">Automatically created by phloc-genericode. Do NOT edit.</ns3:info>
+    </AppInfo>
+  </Annotation>
+  <Identification>
+    <ShortName>PeppolIdentifierIssuingAgencies</ShortName>
+    <Version>1.0</Version>
+    <CanonicalUri>urn:peppol.eu:names:identifier:issuingagencies</CanonicalUri>
+    <CanonicalVersionUri>urn:peppol.eu:names:identifier:issuingagencies-1.0</CanonicalVersionUri>
+  </Identification>
+  <ColumnSet>
+    <Column Id="code" Use="required">
+      <ShortName>Scheme ID</ShortName>
+      <Data Type="string" />
+    </Column>
+    <Column Id="schemeagency" Use="optional">
+      <ShortName>Scheme agency name</ShortName>
+      <Data Type="string" />
+    </Column>
+    <Column Id="iso6523" Use="required">
+      <ShortName>Numeric ISO6523 code</ShortName>
+      <Data Type="string" />
+    </Column>
+    <Key Id="codeKey">
+      <ShortName>Scheme ID</ShortName>
+      <ColumnRef Ref="code" />
+    </Key>
+    <Key Id="iso6523Key">
+      <ShortName>Numeric ISO6523 code</ShortName>
+      <ColumnRef Ref="iso6523" />
+    </Key>
+  </ColumnSet>
+  <SimpleCodeList>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>Test</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>PEPPOL Test</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>0010</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>GLN</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>GS1</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>0088</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>DUNS</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Dun &amp; Bradstreet</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>0062</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>IBAN</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>S.W.I.F.T. Society for Worldwide Interbank Financial Telecommunications s.c.</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>0021</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ISO6523</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>ISO (International Organization for Standardization)</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>0028</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>DK:CPR</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Danish Ministry of the Interior and Health</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>9901</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>DK:CVR</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>The Danish Commerce and Companies Agency</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>9902</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>DK:P</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>The Danish Commerce and Companies Agency</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>0096</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>DK:SE</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Danish Ministry of Taxation, Central Customs and Tax Administration</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>9904</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>DK:VANS</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Danish VANS providers</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>9905</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>IT:VAT</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Ufficio responsabile gestione partite IVA</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>9906</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>IT:CF</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>TAX Authority</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>9907</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>IT:FTI</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Ediforum Italia</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>0097</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>IT:SIA</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Società Interbancaria per l’Automazione</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>0135</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>IT:SECETI</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Servizi Centralizzati SECETI</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>0142</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>NO:ORGNR</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Enhetsregisteret ved Bronnoysundregisterne</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>9908</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>NO:VAT</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Enhetsregisteret ved Bronnoysundregisterne</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>9909</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>HU:VAT</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>9910</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>SE:ORGNR</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>0007</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>FI:OVT</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Finnish tax board</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>0037</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>EU:VAT</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>National ministries of Economy</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>9912</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>EU:REID</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Business Registers Network</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>9913</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>FR:SIRET</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>INSEE: National Institute for statistics and Economic studies</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>0009</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>AT:VAT</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Österreichische Umsatzsteuer-Identifikationsnummer</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>9914</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>AT:GOV</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Österreichisches Verwaltungs bzw. Organisationskennzeichen</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>9915</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>AT:CID</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Firmenidentifikationsnummer der Statistik Austria</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>9916</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>IS:KT</SimpleValue>
+      </Value>
+      <Value ColumnRef="schemeagency">
+        <SimpleValue>Icelandic National Registry</SimpleValue>
+      </Value>
+      <Value ColumnRef="iso6523">
+        <SimpleValue>9917</SimpleValue>
+      </Value>
+    </Row>
+  </SimpleCodeList>
+</ns2:CodeList>

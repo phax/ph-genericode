@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+        	Genericode File DeliveryTermsID
+        	
+        	Oriol Bausà
+
+     -->
+<CodeList xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ ../xsd/genericode.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+  <Identification xmlns="">
+    <ShortName>DeliveryTermsID</ShortName>
+    <Version>1</Version>
+    <CanonicalUri>INCOTERMS 2000</CanonicalUri>
+    <CanonicalVersionUri>INCOTERMS 2000-1</CanonicalVersionUri>
+    <LocationUri></LocationUri>
+  </Identification>
+  <ColumnSet xmlns="">
+    <Column Id="code" Use="required">
+      <ShortName>Code</ShortName>
+      <Data Type="normalizedString"/>
+    </Column>
+    <Column Id="name" Use="optional">
+      <ShortName>Name</ShortName>
+      <Data Type="string"/>
+    </Column>
+    <Key Id="codeKey">
+      <ShortName>CodeKey</ShortName>
+      <ColumnRef Ref="code"/>
+    </Key>
+  </ColumnSet>
+  <SimpleCodeList xmlns="">
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>EXW</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>EX WORKS (named place)*</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>FCA</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>FREE CARRIER (named place)</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>FAS</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>FREE ALONGSIDE SHIP (named port of shipment)*</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>FOB</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>FREE ON BOARD (named port of shipment)</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>CFR</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>COST AND FREIGHT (named port of destination)</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>CIF</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>COST, INSURANCE AND FREIGHT (named port of destination)*</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>CPT</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>CARRIAGE PAID TO (named place of destination)</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>CIP</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>CARRIAGE AND INSURANCE PAID TO (named place of destination)*</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>DAF</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>DELIVERED AT FRONTIER (named place)*</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>DES</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>DELIVERED EX SHIP (named port of destination)</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>DEQ</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>DELIVERED EX QUAY (named port of destination)*</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>DDU</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>DELIVERED DUTY UNPAID (named place of destination)*</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>DDP</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>DELIVERED DUTY PAID (named place of destination)*</SimpleValue>
+      </Value>
+    </Row>
+  </SimpleCodeList>
+</CodeList>

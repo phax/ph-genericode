@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+        	Genericode File DiscrepancyResponseCode
+        	
+        	Oriol Bausà
+
+     -->
+<CodeList xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ ../xsd/genericode.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+  <Identification xmlns="">
+    <ShortName>DiscrepancyResponseCode</ShortName>
+    <Version>1.0</Version>
+    <CanonicalUri>NES</CanonicalUri>
+    <CanonicalVersionUri>NES-1.0</CanonicalVersionUri>
+    <LocationUri>http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/DiscrepancyResponseCode-2.0.gc</LocationUri>
+  </Identification>
+  <ColumnSet xmlns="">
+    <Column Id="code" Use="required">
+      <ShortName>Code</ShortName>
+      <Data Type="normalizedString"/>
+    </Column>
+    <Column Id="name" Use="optional">
+      <ShortName>Name</ShortName>
+      <Data Type="string"/>
+    </Column>
+    <Key Id="codeKey">
+      <ShortName>CodeKey</ShortName>
+      <ColumnRef Ref="code"/>
+    </Key>
+  </ColumnSet>
+  <SimpleCodeList xmlns="">
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>Billing1</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Duplicate billing</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>Billing2</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Wrong amount billed</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>Billing3</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Rebate / Financial compensation</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>Condition1</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>In a condition other than described on the supporting documentation</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>Condition2</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Expired shelf life Item</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>Condition3</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Damaged Item</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>Condition4</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Incomplete Item received</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>Condition5</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Incorrect Item</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>Condition6</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Unacceptable substitute Item</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>Delivery1</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Over-delivery</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>Delivery2</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Under-delivery</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>Delivery3</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Return of goods</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>Quality1</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Item quality deficiency</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>Quality2</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Item quality defect</SimpleValue>
+      </Value>
+    </Row>
+  </SimpleCodeList>
+</CodeList>

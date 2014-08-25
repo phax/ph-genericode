@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+        	Genericode File CountrySubentityCode
+        	
+        	Oriol Bausà
+
+     -->
+<CodeList xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ ../xsd/genericode.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+  <Identification xmlns="">
+    <ShortName>CountrySubentityCode</ShortName>
+    <Version>1.0</Version>
+    <CanonicalUri>ISO 3166-2</CanonicalUri>
+    <CanonicalVersionUri>ISO 3166-2-1.0</CanonicalVersionUri>
+    <LocationUri></LocationUri>
+  </Identification>
+  <ColumnSet xmlns="">
+    <Column Id="code" Use="required">
+      <ShortName>Code</ShortName>
+      <Data Type="normalizedString"/>
+    </Column>
+    <Column Id="name" Use="optional">
+      <ShortName>Name</ShortName>
+      <Data Type="string"/>
+    </Column>
+    <Key Id="codeKey">
+      <ShortName>CodeKey</ShortName>
+      <ColumnRef Ref="code"/>
+    </Key>
+  </ColumnSet>
+  <SimpleCodeList xmlns="">
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-C</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>La Coru&#241;a</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-VI</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>&#193;lava (por Vitoria)</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-AB</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Albacete</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-A</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Alicante</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-AL</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Almer&#237;a</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-O</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Asturias (por Oviedo)</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-AV</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>&#193;vila</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-BA</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Badajoz</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-PM</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Islas Baleares (por Palma de Mallorca)</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-B</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Barcelona</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-BU</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Burgos</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-CC</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>C&#225;ceres</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-CA</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>C&#225;diz</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-S</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Cantabria (por Santander)</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-CS</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Castell&#243;n</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-CE</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Ceuta</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-CR</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Ciudad Real</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-CO</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>C&#243;rdoba</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-CU</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Cuenca</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-GI</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Gerona</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-GR</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Granada</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-GU</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Guadalajara</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-SS</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Guip&#250;zcoa (por San Sebasti&#225;n)</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-H</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Huelva</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-HU</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Huesca</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-J</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Ja&#233;n</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-LO</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>La Rioja (por Logro&#241;o)</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-GC</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Las Palmas (por Las Palmas de Gran Canaria)</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-LE</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Le&#243;n</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-L</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>L&#233;rida</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-LU</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Lugo</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-M</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Madrid</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-MA</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>M&#225;laga</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-ML</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Melilla</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-MU</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Murcia</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-NA</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Navarra</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-OR</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Orense</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-P</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Palencia</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-PO</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Pontevedra</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-SA</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Salamanca</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-TF</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Santa Cruz de Tenerife</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-SG</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Segovia</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-SE</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Sevilla</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-SO</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Soria</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-T</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Tarragona</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-TE</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Teruel</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-TO</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Toledo</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-V</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Valencia</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-VA</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Valladolid</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-BI</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Vizcaya (por Bilbao)</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-ZA</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Zamora</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="code">
+        <SimpleValue>ES-Z</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Zaragoza</SimpleValue>
+      </Value>
+    </Row>
+  </SimpleCodeList>
+</CodeList>
