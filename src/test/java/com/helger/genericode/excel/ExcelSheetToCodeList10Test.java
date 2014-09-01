@@ -1,5 +1,4 @@
 /**
- * Copyright (C) 2006-2014 phloc systems (www.phloc.com)
  * Copyright (C) 2014 Philip Helger (www.helger.com)
  * philip[at]helger[dot]com
  *
@@ -37,7 +36,7 @@ import com.helger.poi.excel.EExcelVersion;
 
 /**
  * Text class for class {@link ExcelSheetToCodeList}.
- * 
+ *
  * @author Philip Helger
  */
 public final class ExcelSheetToCodeList10Test
@@ -65,8 +64,8 @@ public final class ExcelSheetToCodeList10Test
                                                                                        aReadOptions,
                                                                                        "ExampleList",
                                                                                        "1.0",
-                                                                                       new URI ("urn:phloc.com:names:example"),
-                                                                                       new URI ("urn:phloc.com:names:example-1.0"),
+                                                                                       new URI ("urn:www.helger.com:names:example"),
+                                                                                       new URI ("urn:www.helger.com:names:example-1.0"),
                                                                                        null);
     final Document aDoc = new Genericode10CodeListMarshaller ().write (aCodeList);
     assertNotNull (aDoc);

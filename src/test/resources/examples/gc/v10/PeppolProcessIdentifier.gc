@@ -2,7 +2,7 @@
 <ns2:CodeList xmlns:ns2="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
   <Annotation>
     <AppInfo>
-      <ns3:info xmlns:ns3="urn:phloc.com:schemas:genericode:ext">Automatically created by phloc-genericode. Do NOT edit.</ns3:info>
+      <ns3:info xmlns:ns3="urn:www.helger.com:schemas:genericode:ext">Automatically created by ph-genericode. Do NOT edit.</ns3:info>
     </AppInfo>
   </Annotation>
   <Identification>

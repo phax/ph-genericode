@@ -1,5 +1,4 @@
 /**
- * Copyright (C) 2006-2014 phloc systems (www.phloc.com)
  * Copyright (C) 2014 Philip Helger (www.helger.com)
  * philip[at]helger[dot]com
  *
@@ -28,6 +27,7 @@ import javax.xml.namespace.QName;
 
 import org.apache.poi.ss.usermodel.Sheet;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.string.StringHelper;
 import com.helger.genericode.Genericode10Utils;
 import com.helger.genericode.v10.Annotation;
@@ -48,13 +48,13 @@ import com.helger.poi.excel.ExcelReadUtils;
  * A utility class to convert a simple Excel sheet into a code list v1.0
  * consisting of simple values. Please note that merged cells are currently not
  * supported!
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
 public final class ExcelSheetToCodeList10
 {
-  private static final QName QNAME_ANNOTATION = new QName ("urn:phloc.com:schemas:genericode-ext", "info");
+  private static final QName QNAME_ANNOTATION = new QName ("urn:www.helger.com:schemas:genericode-ext", "info");
 
   private ExcelSheetToCodeList10 ()
   {}
@@ -68,10 +68,8 @@ public final class ExcelSheetToCodeList10
                                                           @Nonnull final URI aCanonicalVersionUri,
                                                           @Nullable final URI aLocationURI)
   {
-    if (aExcelSheet == null)
-      throw new NullPointerException ("sheet");
-    if (aReadOptions == null)
-      throw new NullPointerException ("readOptions");
+    ValueEnforcer.notNull (aExcelSheet, "ExcelSheet");
+    ValueEnforcer.notNull (aReadOptions, "ReadOptions");
 
     final ObjectFactory aFactory = new ObjectFactory ();
     final CodeListDocument ret = aFactory.createCodeListDocument ();
@@ -82,7 +80,7 @@ public final class ExcelSheetToCodeList10
     aContent.getAny ().add (new JAXBElement <String> (QNAME_ANNOTATION,
                                                       String.class,
                                                       null,
-                                                      "Automatically created by phloc-genericode. Do NOT edit."));
+                                                      "Automatically created by ph-genericode. Do NOT edit."));
     aAnnotation.setAppInfo (aContent);
     ret.setAnnotation (aAnnotation);
 
