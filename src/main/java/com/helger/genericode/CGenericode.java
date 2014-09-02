@@ -27,17 +27,17 @@ import com.helger.commons.io.resource.ClassPathResource;
 
 /**
  * Constants for the handling of Genericode documents
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
 public final class CGenericode
 {
-  // 0.4 XSD resources
+  /** 0.4 XSD resources */
   public static final List <? extends IReadableResource> GENERICODE_04_XSDS = ContainerHelper.newUnmodifiableList (new ClassPathResource ("/schemas/genericode-code-list-0.4.xsd"),
                                                                                                                    new ClassPathResource ("/schemas/xml.xsd"));
 
-  // 1.0 XSD resources
+  /** 1.0 XSD resources */
   public static final List <? extends IReadableResource> GENERICODE_10_XSDS = ContainerHelper.newUnmodifiableList (new ClassPathResource ("/schemas/genericode-1.0.xsd"),
                                                                                                                    new ClassPathResource ("/schemas/xml.xsd"));
 

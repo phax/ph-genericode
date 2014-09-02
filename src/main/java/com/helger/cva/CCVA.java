@@ -27,13 +27,13 @@ import com.helger.commons.io.resource.ClassPathResource;
 
 /**
  * Constants for the handling of ContextValueAssociation documents
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
 public final class CCVA
 {
-  // 1.0 XSD resources
+  /** 1.0 XSD resources */
   public static final List <? extends IReadableResource> CVA_10_XSDS = ContainerHelper.newUnmodifiableList (new ClassPathResource ("/schemas/ContextValueAssociation-1.0.xsd"),
                                                                                                             new ClassPathResource ("/schemas/xml.xsd"));
 

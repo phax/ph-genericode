@@ -35,7 +35,7 @@ import com.helger.genericode.v10.UseType;
 import com.helger.poi.excel.EExcelVersion;
 
 /**
- * Text class for class {@link ExcelSheetToCodeList}.
+ * Text class for class {@link ExcelSheetToCodeList10}.
  *
  * @author Philip Helger
  */

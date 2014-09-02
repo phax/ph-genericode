@@ -26,11 +26,14 @@ import com.helger.genericode.v10.ObjectFactory;
 /**
  * This is the reader and writer for Genericode 1.0 column sets. This class may
  * be derived to override protected methods from {@link AbstractJAXBMarshaller}.
- * 
+ *
  * @author Philip Helger
  */
 public class Genericode10ColumnSetMarshaller extends AbstractJAXBMarshaller <ColumnSetDocument>
 {
+  /**
+   * Constructor
+   */
   public Genericode10ColumnSetMarshaller ()
   {
     super (ColumnSetDocument.class, CGenericode.GENERICODE_10_XSDS);

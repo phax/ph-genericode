@@ -25,18 +25,20 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.CGlobal;
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.collections.ContainerHelper;
 
 /**
  * This class contains the options that are used to read the Excel file.
- * 
+ *
  * @author Philip Helger
  */
 @NotThreadSafe
 public final class ExcelReadOptions <USE_TYPE>
 {
+  /** Default lines to skip */
   public static final int DEFAULT_LINES_TO_SKIP = 0;
   public static final int DEFAULT_LINEINDEX_SHORTNAME = 0;
   public static final int DEFAULT_LINEINDEX_LONGNAME = CGlobal.ILLEGAL_UINT;
@@ -46,14 +48,24 @@ public final class ExcelReadOptions <USE_TYPE>
   private int m_nLineIndexLongName = DEFAULT_LINEINDEX_LONGNAME;
   private final Map <Integer, ExcelReadColumn <USE_TYPE>> m_aColumns = new TreeMap <Integer, ExcelReadColumn <USE_TYPE>> ();
 
+  /**
+   * Constructor
+   */
   public ExcelReadOptions ()
   {}
 
+  /**
+   * Set the number of lines to skip before the header row starts
+   * 
+   * @param nLinesToSkip
+   *        Must be &ge; 0.
+   * @return this
+   */
   @Nonnull
   public ExcelReadOptions <USE_TYPE> setLinesToSkip (@Nonnegative final int nLinesToSkip)
   {
-    if (nLinesToSkip < 0)
-      throw new IllegalArgumentException ("Value must be >= 0: " + nLinesToSkip);
+    ValueEnforcer.isGE0 (nLinesToSkip, "LinesToSkip");
+
     m_nLinesToSkip = nLinesToSkip;
     return this;
   }
@@ -71,8 +83,8 @@ public final class ExcelReadOptions <USE_TYPE>
   @Nonnull
   public ExcelReadOptions <USE_TYPE> setLineIndexShortName (@Nonnegative final int nLineIndexShortName)
   {
-    if (nLineIndexShortName < 0)
-      throw new IllegalArgumentException ("The passed index may not be negative: " + nLineIndexShortName);
+    ValueEnforcer.isGE0 (nLineIndexShortName, "LineIndexShortName");
+
     m_nLineIndexShortName = nLineIndexShortName;
     return this;
   }
@@ -101,7 +113,7 @@ public final class ExcelReadOptions <USE_TYPE>
 
   /**
    * Add a single column definition.
-   * 
+   *
    * @param nIndex
    *        The 0-based index of the column in Excel.
    * @param sColumnID
@@ -123,8 +135,8 @@ public final class ExcelReadOptions <USE_TYPE>
                                                 @Nonnull @Nonempty final String sDataType,
                                                 final boolean bKeyColumn)
   {
-    if (nIndex < 0)
-      throw new IllegalArgumentException ("The passed index may not be negative: " + nIndex);
+    ValueEnforcer.isGE0 (nIndex, "Index");
+
     final Integer aIndex = Integer.valueOf (nIndex);
     if (m_aColumns.containsKey (aIndex))
       throw new IllegalArgumentException ("The column at index " + nIndex + " is already mapped!");

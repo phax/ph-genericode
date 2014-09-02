@@ -20,14 +20,14 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 
 /**
  * This class represents a single column definition when converting an Excel
  * sheet into a code list.
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
@@ -45,17 +45,13 @@ public final class ExcelReadColumn <USE_TYPE>
                           @Nonnull @Nonempty final String sDataType,
                           final boolean bKeyColumn)
   {
-    if (nIndex < 0)
-      throw new IllegalArgumentException ("The passed index may not be negative: " + nIndex);
-    if (StringHelper.hasNoText (sColumnID))
-      throw new IllegalArgumentException ("columnID may not be empty");
-    if (eUseType == null)
-      throw new NullPointerException ("useType");
+    ValueEnforcer.isGE0 (nIndex, "Index");
+    ValueEnforcer.notEmpty (sColumnID, "ColumnID");
+    ValueEnforcer.notNull (eUseType, "UseType");
     // if (bKeyColumn && eUseType == UseType.OPTIONAL)
     // throw new IllegalArgumentException
     // ("Optional columns cannot be key columns!");
-    if (StringHelper.hasNoText (sDataType))
-      throw new IllegalArgumentException ("dataType may not be empty");
+    ValueEnforcer.notEmpty (sDataType, "DataType");
     m_nIndex = nIndex;
     m_sColumnID = sColumnID;
     m_eUseType = eUseType;

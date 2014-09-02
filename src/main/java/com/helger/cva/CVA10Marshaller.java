@@ -26,11 +26,14 @@ import com.helger.cva.v10.ObjectFactory;
 /**
  * This is the reader and writer for CVA 1.0 documents. This class may be
  * derived to override protected methods from {@link AbstractJAXBMarshaller}.
- * 
+ *
  * @author Philip Helger
  */
 public class CVA10Marshaller extends AbstractJAXBMarshaller <ContextValueAssociation>
 {
+  /**
+   * Constructor
+   */
   public CVA10Marshaller ()
   {
     super (ContextValueAssociation.class, CCVA.CVA_10_XSDS);

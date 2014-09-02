@@ -26,11 +26,14 @@ import com.helger.genericode.v04.ObjectFactory;
 /**
  * This is the reader and writer for Genericode 0.4 code lists. This class may
  * be derived to override protected methods from {@link AbstractJAXBMarshaller}.
- * 
+ *
  * @author Philip Helger
  */
 public class Genericode04CodeListMarshaller extends AbstractJAXBMarshaller <CodeListDocument>
 {
+  /**
+   * Constructor
+   */
   public Genericode04CodeListMarshaller ()
   {
     super (CodeListDocument.class, CGenericode.GENERICODE_04_XSDS);
