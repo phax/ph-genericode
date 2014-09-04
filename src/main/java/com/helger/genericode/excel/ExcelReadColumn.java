@@ -29,6 +29,8 @@ import com.helger.commons.string.ToStringGenerator;
  * sheet into a code list.
  *
  * @author Philip Helger
+ * @param <USE_TYPE>
+ *        The UseType of either GeneriCode 0.4 or 1.0
  */
 @Immutable
 public final class ExcelReadColumn <USE_TYPE>

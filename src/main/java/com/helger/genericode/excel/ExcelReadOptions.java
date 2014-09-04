@@ -34,6 +34,8 @@ import com.helger.commons.collections.ContainerHelper;
  * This class contains the options that are used to read the Excel file.
  *
  * @author Philip Helger
+ * @param <USE_TYPE>
+ *        The UseType of either GeneriCode 0.4 or 1.0
  */
 @NotThreadSafe
 public final class ExcelReadOptions <USE_TYPE>
@@ -56,7 +58,7 @@ public final class ExcelReadOptions <USE_TYPE>
 
   /**
    * Set the number of lines to skip before the header row starts
-   * 
+   *
    * @param nLinesToSkip
    *        Must be &ge; 0.
    * @return this
