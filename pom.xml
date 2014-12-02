@@ -105,6 +105,9 @@
               com.helger.cva.*,
               com.helger.genericode.*
             </Export-Package>
+            <Import-Package>
+              !javax.annotation.*,*
+            </Import-Package>
           </instructions>
         </configuration>
       </plugin>
