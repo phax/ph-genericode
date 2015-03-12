@@ -28,7 +28,7 @@ import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 
 /**
  * This class contains the options that are used to read the Excel file.
@@ -154,6 +154,6 @@ public final class ExcelReadOptions <USE_TYPE>
   public List <ExcelReadColumn <USE_TYPE>> getAllColumns ()
   {
     // Create a copy. Values are sorted ascending because of the TreeMap usage
-    return ContainerHelper.newList (m_aColumns.values ());
+    return CollectionHelper.newList (m_aColumns.values ());
   }
 }

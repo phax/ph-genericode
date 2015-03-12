@@ -25,7 +25,7 @@ import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.lang.CGStringHelper;
 import com.helger.commons.string.StringHelper;
 import com.helger.genericode.v10.Column;
@@ -44,7 +44,7 @@ import com.helger.genericode.v10.Value;
 
 /**
  * Helper class for Genericode 1.0 reading
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
@@ -57,7 +57,7 @@ public final class Genericode10Utils
 
   /**
    * Get the ID of the passed column element.
-   * 
+   *
    * @param aColumnElement
    *        The column element to use. Must be either a {@link ColumnRef} or a
    *        {@link Column}.
@@ -73,7 +73,7 @@ public final class Genericode10Utils
     if (aColumnElement instanceof Key)
     {
       final List <KeyColumnRef> aKeyColumnRefs = ((Key) aColumnElement).getColumnRef ();
-      final KeyColumnRef aKeyColumnRef = ContainerHelper.getFirstElement (aKeyColumnRefs);
+      final KeyColumnRef aKeyColumnRef = CollectionHelper.getFirstElement (aKeyColumnRefs);
       if (aKeyColumnRef == null)
         throw new IllegalArgumentException ("Key contains not KeyColumnRef!!");
       final Object aRef = aKeyColumnRef.getRef ();
@@ -93,7 +93,7 @@ public final class Genericode10Utils
   /**
    * Get the value of a column identified by an ID within a specified row. This
    * method only handles simple values.
-   * 
+   *
    * @param aRow
    *        The row to scan. May not be <code>null</code>.
    * @param sColumnID
@@ -117,7 +117,7 @@ public final class Genericode10Utils
 
   /**
    * Get all contained columns
-   * 
+   *
    * @param aColumnSet
    *        The column set to scan. May not be <code>null</code>.
    * @return A non-<code>null</code> list of all columns. Never
@@ -136,7 +136,7 @@ public final class Genericode10Utils
 
   /**
    * Get the IDs of all contained columns
-   * 
+   *
    * @param aColumnSet
    *        The column set to scan. May not be <code>null</code>.
    * @return A non-<code>null</code> list of all column IDs. Never
@@ -154,7 +154,7 @@ public final class Genericode10Utils
 
   /**
    * Get the column with the specified ID.
-   * 
+   *
    * @param aColumnSet
    *        The column set to scan. May not be <code>null</code>.
    * @param sID
@@ -173,7 +173,7 @@ public final class Genericode10Utils
 
   /**
    * Get all contained keys
-   * 
+   *
    * @param aColumnSet
    *        The column set to scan. May not be <code>null</code>.
    * @return A non-<code>null</code> list of all keys. Never <code>null</code>
@@ -192,7 +192,7 @@ public final class Genericode10Utils
 
   /**
    * Get the IDs of all contained keys
-   * 
+   *
    * @param aColumnSet
    *        The column set to scan. May not be <code>null</code>.
    * @return A non-<code>null</code> list of all key IDs. Never
@@ -210,7 +210,7 @@ public final class Genericode10Utils
 
   /**
    * Get the key with the specified ID.
-   * 
+   *
    * @param aColumnSet
    *        The column set to scan. May not be <code>null</code>.
    * @param sID
@@ -229,7 +229,7 @@ public final class Genericode10Utils
 
   /**
    * Check if the passed column ID is a key column in the specified column set
-   * 
+   *
    * @param aColumnSet
    *        The column set to scan. May not be <code>null</code>.
    * @param sColumnID
@@ -249,7 +249,7 @@ public final class Genericode10Utils
 
   /**
    * Create a {@link ShortName} object
-   * 
+   *
    * @param sValue
    *        The value to assign
    * @return Never <code>null</code>.
@@ -264,7 +264,7 @@ public final class Genericode10Utils
 
   /**
    * Create a {@link LongName} object
-   * 
+   *
    * @param sValue
    *        The value to assign
    * @return Never <code>null</code>.
@@ -279,7 +279,7 @@ public final class Genericode10Utils
 
   /**
    * Create a {@link SimpleValue} object
-   * 
+   *
    * @param sValue
    *        The value to assign
    * @return Never <code>null</code>.
@@ -294,7 +294,7 @@ public final class Genericode10Utils
 
   /**
    * Create a {@link KeyColumnRef} object
-   * 
+   *
    * @param aColumn
    *        The column to reference
    * @return Never <code>null</code>.
@@ -310,7 +310,7 @@ public final class Genericode10Utils
 
   /**
    * Create a new column to be added to a column set
-   * 
+   *
    * @param sColumnID
    *        The ID of the column
    * @param eUseType
@@ -353,7 +353,7 @@ public final class Genericode10Utils
 
   /**
    * Create a new key to be added to a column set
-   * 
+   *
    * @param sColumnID
    *        The ID of the column
    * @param sShortName

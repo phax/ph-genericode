@@ -21,7 +21,7 @@ import java.util.List;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.annotations.PresentForCodeCoverage;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.io.IReadableResource;
 import com.helger.commons.io.resource.ClassPathResource;
 
@@ -34,11 +34,11 @@ import com.helger.commons.io.resource.ClassPathResource;
 public final class CGenericode
 {
   /** 0.4 XSD resources */
-  public static final List <? extends IReadableResource> GENERICODE_04_XSDS = ContainerHelper.newUnmodifiableList (new ClassPathResource ("/schemas/genericode-code-list-0.4.xsd"),
+  public static final List <? extends IReadableResource> GENERICODE_04_XSDS = CollectionHelper.newUnmodifiableList (new ClassPathResource ("/schemas/genericode-code-list-0.4.xsd"),
                                                                                                                    new ClassPathResource ("/schemas/xml.xsd"));
 
   /** 1.0 XSD resources */
-  public static final List <? extends IReadableResource> GENERICODE_10_XSDS = ContainerHelper.newUnmodifiableList (new ClassPathResource ("/schemas/genericode-1.0.xsd"),
+  public static final List <? extends IReadableResource> GENERICODE_10_XSDS = CollectionHelper.newUnmodifiableList (new ClassPathResource ("/schemas/genericode-1.0.xsd"),
                                                                                                                    new ClassPathResource ("/schemas/xml.xsd"));
 
   @SuppressWarnings ("unused")
