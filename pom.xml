@@ -69,7 +69,7 @@
     <dependency>
       <groupId>com.helger</groupId>
       <artifactId>ph-commons</artifactId>
-      <version>5.7.0</version>
+      <version>5.7.1</version>
     </dependency>
     
     <dependency>
@@ -124,7 +124,7 @@
       <plugin>
         <groupId>org.jvnet.jaxb2.maven2</groupId>
         <artifactId>maven-jaxb2-plugin</artifactId>
-        <version>0.11.0</version>
+        <version>0.12.3</version>
         <executions>
           <execution>
             <goals>
