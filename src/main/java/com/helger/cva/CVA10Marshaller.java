@@ -19,7 +19,7 @@ package com.helger.cva;
 import javax.annotation.Nonnull;
 import javax.xml.bind.JAXBElement;
 
-import com.helger.commons.jaxb.utils.AbstractJAXBMarshaller;
+import com.helger.commons.jaxb.AbstractJAXBMarshaller;
 import com.helger.cva.v10.ContextValueAssociation;
 import com.helger.cva.v10.ObjectFactory;
 

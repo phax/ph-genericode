@@ -25,10 +25,10 @@ import org.junit.Test;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-import com.helger.commons.io.IReadableResource;
 import com.helger.commons.io.file.iterate.FileSystemIterator;
 import com.helger.commons.io.resource.FileSystemResource;
-import com.helger.commons.xml.serialize.DOMReader;
+import com.helger.commons.io.resource.IReadableResource;
+import com.helger.commons.xml.serialize.read.DOMReader;
 import com.helger.genericode.v10.CodeListDocument;
 
 /**

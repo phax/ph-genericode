@@ -29,7 +29,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.string.StringHelper;
-import com.helger.genericode.Genericode10Utils;
+import com.helger.genericode.Genericode10Helper;
 import com.helger.genericode.v10.Annotation;
 import com.helger.genericode.v10.AnyOtherContent;
 import com.helger.genericode.v10.CodeListDocument;
@@ -86,7 +86,7 @@ public final class ExcelSheetToCodeList10
 
     // create identification
     final Identification aIdentification = aFactory.createIdentification ();
-    aIdentification.setShortName (Genericode10Utils.createShortName (sCodeListName));
+    aIdentification.setShortName (Genericode10Helper.createShortName (sCodeListName));
     aIdentification.setVersion (sCodeListVersion);
     aIdentification.setCanonicalUri (aCanonicalUri.toString ());
     aIdentification.setCanonicalVersionUri (aCanonicalVersionUri.toString ());
@@ -112,7 +112,7 @@ public final class ExcelSheetToCodeList10
                                .getStringCellValue ();
 
       // Create Genericode column set
-      final Column aColumn = Genericode10Utils.createColumn (aExcelColumn.getColumnID (),
+      final Column aColumn = Genericode10Helper.createColumn (aExcelColumn.getColumnID (),
                                                              aExcelColumn.getUseType (),
                                                              sShortName,
                                                              sLongName,
@@ -124,7 +124,7 @@ public final class ExcelSheetToCodeList10
       if (aExcelColumn.isKeyColumn ())
       {
         // Create key definition
-        final Key aKey = Genericode10Utils.createKey (aExcelColumn.getColumnID () + "Key",
+        final Key aKey = Genericode10Helper.createKey (aExcelColumn.getColumnID () + "Key",
                                                       sShortName,
                                                       sLongName,
                                                       aColumn);
@@ -156,8 +156,8 @@ public final class ExcelSheetToCodeList10
         {
           // Create a single value in the current row
           final Value aValue = aFactory.createValue ();
-          aValue.setColumnRef (Genericode10Utils.getColumnOfID (aColumnSet, aExcelColumn.getColumnID ()));
-          aValue.setSimpleValue (Genericode10Utils.createSimpleValue (sValue));
+          aValue.setColumnRef (Genericode10Helper.getColumnOfID (aColumnSet, aExcelColumn.getColumnID ()));
+          aValue.setSimpleValue (Genericode10Helper.createSimpleValue (sValue));
           aRow.getValue ().add (aValue);
         }
       }

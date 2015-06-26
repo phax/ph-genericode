@@ -27,8 +27,8 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Test;
 import org.w3c.dom.Document;
 
-import com.helger.commons.io.IReadableResource;
 import com.helger.commons.io.resource.ClassPathResource;
+import com.helger.commons.io.resource.IReadableResource;
 import com.helger.genericode.Genericode04CodeListMarshaller;
 import com.helger.genericode.v04.CodeListDocument;
 import com.helger.genericode.v04.UseType;

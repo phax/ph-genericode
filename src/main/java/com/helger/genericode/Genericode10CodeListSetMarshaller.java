@@ -19,7 +19,7 @@ package com.helger.genericode;
 import javax.annotation.Nonnull;
 import javax.xml.bind.JAXBElement;
 
-import com.helger.commons.jaxb.utils.AbstractJAXBMarshaller;
+import com.helger.commons.jaxb.AbstractJAXBMarshaller;
 import com.helger.genericode.v10.CodeListSetDocument;
 import com.helger.genericode.v10.ObjectFactory;
 
