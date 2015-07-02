@@ -42,7 +42,7 @@ import com.helger.genericode.v10.Row;
 import com.helger.genericode.v10.SimpleCodeList;
 import com.helger.genericode.v10.UseType;
 import com.helger.genericode.v10.Value;
-import com.helger.poi.excel.ExcelReadUtils;
+import com.helger.poi.excel.ExcelReadHelper;
 
 /**
  * A utility class to convert a simple Excel sheet into a code list v1.0
@@ -151,7 +151,7 @@ public final class ExcelSheetToCodeList10
       final Row aRow = aFactory.createRow ();
       for (final ExcelReadColumn <UseType> aExcelColumn : aExcelColumns)
       {
-        final String sValue = ExcelReadUtils.getCellValueString (aExcelRow.getCell (aExcelColumn.getIndex ()));
+        final String sValue = ExcelReadHelper.getCellValueString (aExcelRow.getCell (aExcelColumn.getIndex ()));
         if (StringHelper.hasText (sValue) || aExcelColumn.getUseType () == UseType.REQUIRED)
         {
           // Create a single value in the current row

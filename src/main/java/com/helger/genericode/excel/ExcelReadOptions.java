@@ -38,7 +38,7 @@ import com.helger.commons.collection.CollectionHelper;
  *        The UseType of either GeneriCode 0.4 or 1.0
  */
 @NotThreadSafe
-public final class ExcelReadOptions <USE_TYPE>
+public class ExcelReadOptions <USE_TYPE>
 {
   /** Default lines to skip */
   public static final int DEFAULT_LINES_TO_SKIP = 0;

@@ -33,7 +33,7 @@ import com.helger.commons.string.ToStringGenerator;
  *        The UseType of either GeneriCode 0.4 or 1.0
  */
 @Immutable
-public final class ExcelReadColumn <USE_TYPE>
+public class ExcelReadColumn <USE_TYPE>
 {
   private final int m_nIndex;
   private final String m_sColumnID;
