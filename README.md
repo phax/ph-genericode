@@ -2,12 +2,15 @@
 
 Java library for reading and writing OASIS GeneriCode and CVA files.
 
+Versions <= 3.3.1 are compatible with ph-commons < 6.0
+Versions >= 4.0.0 are compatible with ph-commons >= 6.0
+
 #Usage with Maven
 ```xml
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-genericode</artifactId>
-  <version>3.3.0</version>
+  <version>4.0.0</version>
 </dependency>
 ```
 
