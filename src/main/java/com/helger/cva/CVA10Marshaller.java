@@ -19,9 +19,9 @@ package com.helger.cva;
 import javax.annotation.Nonnull;
 import javax.xml.bind.JAXBElement;
 
-import com.helger.commons.jaxb.AbstractJAXBMarshaller;
 import com.helger.cva.v10.ContextValueAssociation;
 import com.helger.cva.v10.ObjectFactory;
+import com.helger.jaxb.AbstractJAXBMarshaller;
 
 /**
  * This is the reader and writer for CVA 1.0 documents. This class may be

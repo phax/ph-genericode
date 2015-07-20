@@ -19,9 +19,9 @@ package com.helger.genericode;
 import javax.annotation.Nonnull;
 import javax.xml.bind.JAXBElement;
 
-import com.helger.commons.jaxb.AbstractJAXBMarshaller;
 import com.helger.genericode.v04.CodeListDocument;
 import com.helger.genericode.v04.ObjectFactory;
+import com.helger.jaxb.AbstractJAXBMarshaller;
 
 /**
  * This is the reader and writer for Genericode 0.4 code lists. This class may

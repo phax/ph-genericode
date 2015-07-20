@@ -19,9 +19,9 @@ package com.helger.genericode;
 import javax.annotation.Nonnull;
 import javax.xml.bind.JAXBElement;
 
-import com.helger.commons.jaxb.AbstractJAXBMarshaller;
 import com.helger.genericode.v10.ColumnSetDocument;
 import com.helger.genericode.v10.ObjectFactory;
+import com.helger.jaxb.AbstractJAXBMarshaller;
 
 /**
  * This is the reader and writer for Genericode 1.0 column sets. This class may
