@@ -69,7 +69,7 @@
     <dependency>
       <groupId>com.helger</groupId>
       <artifactId>ph-jaxb</artifactId>
-      <version>6.1.0</version>
+      <version>6.1.1</version>
     </dependency>
     
     <dependency>
@@ -82,7 +82,7 @@
     <dependency>
       <groupId>com.helger</groupId>
       <artifactId>ph-datetime</artifactId>
-      <version>4.1.1</version>
+      <version>4.2.0</version>
       <optional>true</optional>
     </dependency>
     <dependency>
