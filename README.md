@@ -13,7 +13,7 @@ Versions >= 4.0.0 are compatible with ph-commons >= 6.0
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-genericode</artifactId>
-  <version>4.0.0</version>
+  <version>4.1.1</version>
 </dependency>
 ```
 
