@@ -22,10 +22,10 @@
   <parent>
     <groupId>com.helger</groupId>
     <artifactId>parent-pom</artifactId>
-    <version>1.4.1</version>
+    <version>1.8.0-SNAPSHOT</version>
   </parent>
   <artifactId>ph-genericode</artifactId>
-  <version>4.1.2-SNAPSHOT</version>
+  <version>5.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>ph-genericode</name>
   <description>Library to read and write OASIS GeneriCode and CVA documents</description>
@@ -61,16 +61,19 @@
     </developer>
   </developers>
   
-  <properties>
-    <jaxb.version>2.1.13</jaxb.version>
-  </properties>
-  
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.helger</groupId>
         <artifactId>ph-commons-parent-pom</artifactId>
-        <version>6.2.3</version>
+        <version>8.0.0-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.helger</groupId>
+        <artifactId>ph-datetime-parent-pom</artifactId>
+        <version>5.0.0-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -88,22 +91,14 @@
     </dependency>
     
     <dependency>
-      <groupId>com.sun.xml.bind</groupId>
-      <artifactId>jaxb-impl</artifactId>
-      <version>${jaxb.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    
-    <dependency>
       <groupId>com.helger</groupId>
       <artifactId>ph-datetime</artifactId>
-      <version>4.2.1</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>com.helger</groupId>
       <artifactId>ph-poi</artifactId>
-      <version>3.0.1</version>
+      <version>4.0.0-SNAPSHOT</version>
       <optional>true</optional>
     </dependency>
     

@@ -35,11 +35,11 @@ public final class CGenericode
 {
   /** 0.4 XSD resources */
   public static final List <? extends IReadableResource> GENERICODE_04_XSDS = CollectionHelper.newUnmodifiableList (new ClassPathResource ("/schemas/genericode-code-list-0.4.xsd"),
-                                                                                                                   new ClassPathResource ("/schemas/xml.xsd"));
+                                                                                                                    new ClassPathResource ("/schemas/xml.xsd"));
 
   /** 1.0 XSD resources */
   public static final List <? extends IReadableResource> GENERICODE_10_XSDS = CollectionHelper.newUnmodifiableList (new ClassPathResource ("/schemas/genericode-1.0.xsd"),
-                                                                                                                   new ClassPathResource ("/schemas/xml.xsd"));
+                                                                                                                    new ClassPathResource ("/schemas/xml.xsd"));
 
   @SuppressWarnings ("unused")
   @PresentForCodeCoverage
