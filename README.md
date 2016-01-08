@@ -6,7 +6,8 @@
 Java library for reading and writing OASIS GeneriCode and CVA files.
 
 Versions <= 3.3.1 are compatible with ph-commons < 6.0
-Versions >= 4.0.0 are compatible with ph-commons >= 6.0
+Versions >= 4.0.0 are compatible with ph-commons >= 6.0.
+Versions >= 5 require JDK 8.
 
 #Usage with Maven
 ```xml
