@@ -16,9 +16,6 @@
  */
 package com.helger.genericode;
 
-import javax.annotation.Nonnull;
-import javax.xml.bind.JAXBElement;
-
 import com.helger.genericode.v10.ColumnSetDocument;
 import com.helger.genericode.v10.ObjectFactory;
 import com.helger.jaxb.AbstractJAXBMarshaller;
@@ -36,13 +33,6 @@ public class Genericode10ColumnSetMarshaller extends AbstractJAXBMarshaller <Col
    */
   public Genericode10ColumnSetMarshaller ()
   {
-    super (ColumnSetDocument.class, CGenericode.GENERICODE_10_XSDS);
-  }
-
-  @Override
-  @Nonnull
-  protected final JAXBElement <ColumnSetDocument> wrapObject (final ColumnSetDocument aColumnSetDocument)
-  {
-    return new ObjectFactory ().createColumnSet (aColumnSetDocument);
+    super (ColumnSetDocument.class, CGenericode.GENERICODE_10_XSDS, o -> new ObjectFactory ().createColumnSet (o));
   }
 }

@@ -16,9 +16,6 @@
  */
 package com.helger.genericode;
 
-import javax.annotation.Nonnull;
-import javax.xml.bind.JAXBElement;
-
 import com.helger.genericode.v04.CodeListSetDocument;
 import com.helger.genericode.v04.ObjectFactory;
 import com.helger.jaxb.AbstractJAXBMarshaller;
@@ -37,13 +34,6 @@ public class Genericode04CodeListSetMarshaller extends AbstractJAXBMarshaller <C
    */
   public Genericode04CodeListSetMarshaller ()
   {
-    super (CodeListSetDocument.class, CGenericode.GENERICODE_04_XSDS);
-  }
-
-  @Override
-  @Nonnull
-  protected final JAXBElement <CodeListSetDocument> wrapObject (final CodeListSetDocument aCodeListSetDocument)
-  {
-    return new ObjectFactory ().createCodeListSet (aCodeListSetDocument);
+    super (CodeListSetDocument.class, CGenericode.GENERICODE_04_XSDS, o -> new ObjectFactory ().createCodeListSet (o));
   }
 }

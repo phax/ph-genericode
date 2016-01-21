@@ -16,9 +16,6 @@
  */
 package com.helger.cva;
 
-import javax.annotation.Nonnull;
-import javax.xml.bind.JAXBElement;
-
 import com.helger.cva.v10.ContextValueAssociation;
 import com.helger.cva.v10.ObjectFactory;
 import com.helger.jaxb.AbstractJAXBMarshaller;
@@ -36,13 +33,8 @@ public class CVA10Marshaller extends AbstractJAXBMarshaller <ContextValueAssocia
    */
   public CVA10Marshaller ()
   {
-    super (ContextValueAssociation.class, CCVA.CVA_10_XSDS);
-  }
-
-  @Override
-  @Nonnull
-  protected final JAXBElement <ContextValueAssociation> wrapObject (final ContextValueAssociation aContextValueAssociation)
-  {
-    return new ObjectFactory ().createContextValueAssociation (aContextValueAssociation);
+    super (ContextValueAssociation.class,
+           CCVA.CVA_10_XSDS,
+           o -> new ObjectFactory ().createContextValueAssociation (o));
   }
 }
