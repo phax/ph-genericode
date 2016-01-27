@@ -30,4 +30,5 @@ Technically this library requires [ph-commons](https://github.com/phax/ph-common
 
 ---
 
-On Twitter: <a href="https://twitter.com/philiphelger">Follow @philiphelger</a>
+My personal [Coding Styleguide](https://github.com/phax/meta/blob/master/CodeingStyleguide.md) |
+On Twitter: <a href="https://twitter.com/philiphelger">@philiphelger</a>
