@@ -34,8 +34,8 @@ import com.helger.commons.io.resource.IReadableResource;
 public final class CCVA
 {
   /** 1.0 XSD resources */
-  public static final List <? extends IReadableResource> CVA_10_XSDS = CollectionHelper.newUnmodifiableList (new ClassPathResource ("/schemas/ContextValueAssociation-1.0.xsd"),
-                                                                                                             new ClassPathResource ("/schemas/xml.xsd"));
+  public static final List <? extends IReadableResource> CVA_10_XSDS = CollectionHelper.makeUnmodifiable (new ClassPathResource ("/schemas/ContextValueAssociation-1.0.xsd"),
+                                                                                                          new ClassPathResource ("/schemas/xml.xsd"));
 
   @SuppressWarnings ("unused")
   @PresentForCodeCoverage
