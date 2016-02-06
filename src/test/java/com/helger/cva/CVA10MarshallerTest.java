@@ -52,7 +52,7 @@ public final class CVA10MarshallerTest
     assertNotNull (aCVA);
 
     // Write again
-    final Document aDoc2 = new CVA10Marshaller ().write (aCVA);
+    final Document aDoc2 = new CVA10Marshaller ().getAsDocument (aCVA);
     assertNotNull (aDoc2);
   }
 

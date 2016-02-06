@@ -52,7 +52,7 @@ public final class Genericode04CodeListMarshallerTest
     assertNotNull (aCLDoc);
 
     // Write again
-    final Document aDoc2 = new Genericode04CodeListMarshaller ().write (aCLDoc);
+    final Document aDoc2 = new Genericode04CodeListMarshaller ().getAsDocument (aCLDoc);
     assertNotNull (aDoc2);
   }
 

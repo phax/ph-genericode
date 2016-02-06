@@ -67,7 +67,7 @@ public final class ExcelSheetToCodeList10Test
                                                                                        new URI ("urn:www.helger.com:names:example"),
                                                                                        new URI ("urn:www.helger.com:names:example-1.0"),
                                                                                        null);
-    final Document aDoc = new Genericode10CodeListMarshaller ().write (aCodeList);
+    final Document aDoc = new Genericode10CodeListMarshaller ().getAsDocument (aCodeList);
     assertNotNull (aDoc);
     final CodeListDocument aCLDoc = new Genericode10CodeListMarshaller ().read (aDoc);
     assertNotNull (aCLDoc);
