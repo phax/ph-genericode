@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gc:CodeList xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:fn="http://www.w3.org/2005/xpath-functions"
+             xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+             xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>CriteriaTypeCode</ShortName>
+      <LongName xml:lang="en">CRITERIA TYPE CODE</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>Placeholder</CanonicalUri>
+      <CanonicalVersionUri>Placeholder</CanonicalVersionUri>
+      <Agency>
+         <LongName xml:lang="en">DG GROW (European Commission)</LongName>
+         <Identifier>EU-COM-GROW</Identifier>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" Lang="en"/>
+      </Column>
+      <Column Id="name" Use="optional">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en"/>
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DATA_ON_ECONOMIC_OPERATOR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>General information about the economic operator</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXCLUSION.CRIMINAL_CONVICTIONS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Grounds for exclusion relating to criminal convictions</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXCLUSION.PAYMENT_OF_TAXES</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Grounds for exclusion relating to the payment of taxes contributions</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXCLUSION.PAYMENT_OF_SOCIAL_SECURITY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Grounds for exclusion relating to the payment of social security contributions</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXCLUSION.ENVIRONMENTAL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Grounds for exclusion relating to the breaching of environmental, social and labour laws</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXCLUSION.INSOLVENCY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Grounds for exclusion for bankruptcy of insolvency</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXCLUSION.MISCONDUCT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Grounds for exclusion for misconduct</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXCLUSION.CONFLICT_OF_INTEREST</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Grounds for exclusion relating to possible conflicts of interests</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>EXCLUSION.OTHER Other exclusion grounds that may be foreseen in the national legislation of the contracting authority's or contracting entity's Member State     </SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other exclusion grounds that may be foreseen in the national legislation of the contracting authority's or contracting entity's Member State      </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SELECTION.SUITABILITY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Selection criteria relating to the suitability of the economic operator </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SELECTION.ECONOMIC_FINANCIAL_STANDING</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Selection criteria relating to the economical and financial standing</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SELECTION.TECHNICAL_PROFESSIONAL_ABILITY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Selection criteria relating to the technical and professional ability</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SELECTION.QUALITY_ASSURANCE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Selection criteria relating to the quality assurance schemes and environmental management standards </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SELECTION.ALL_CRITERIA_SATISFIED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>The economic operator declares that it will satisfy all the required selection criteria indicated in the relevant notice or in the procurement documents referred to in the notice</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SELECTION.REDUCTION_CANDIDATES</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Selection criteria relating to the reduction of the number of qualified candidates</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

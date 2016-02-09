@@ -21,10 +21,13 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 
+import javax.annotation.Nonnull;
+
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+import com.helger.commons.io.file.filter.IFileFilter;
 import com.helger.commons.io.file.iterate.FileSystemIterator;
 import com.helger.commons.io.resource.FileSystemResource;
 import com.helger.commons.io.resource.IReadableResource;
@@ -38,29 +41,28 @@ import com.helger.genericode.v10.CodeListDocument;
  */
 public final class Genericode10CodeListMarshallerTest
 {
-  private static void _testReadAndWriteValid (final IReadableResource aRes) throws SAXException
+  private static void _testReadAndWriteValid (@Nonnull final IReadableResource aRes) throws SAXException
   {
     // Resolve resource
     assertTrue (aRes.exists ());
 
     // Read XML
     final Document aDoc = DOMReader.readXMLDOM (aRes);
-    assertNotNull (aDoc);
+    assertNotNull (aRes.getPath (), aDoc);
 
     // Read code list
     final CodeListDocument aCLDoc = new Genericode10CodeListMarshaller ().read (aDoc);
-    assertNotNull (aCLDoc);
+    assertNotNull (aRes.getPath (), aCLDoc);
 
     // Write again
     final Document aDoc2 = new Genericode10CodeListMarshaller ().getAsDocument (aCLDoc);
-    assertNotNull (aDoc2);
+    assertNotNull (aRes.getPath (), aDoc2);
   }
 
   @Test
   public void testReadValid () throws SAXException
   {
-    for (final File aFile : new FileSystemIterator ("src/test/resources/examples/gc/v10"))
-      if (aFile.isFile ())
-        _testReadAndWriteValid (new FileSystemResource (aFile));
+    for (final File aFile : new FileSystemIterator ("src/test/resources/examples/gc/v10").withFilter (IFileFilter.filenameEndsWith (".gc")))
+      _testReadAndWriteValid (new FileSystemResource (aFile));
   }
 }
