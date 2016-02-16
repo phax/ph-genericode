@@ -48,7 +48,7 @@ public class ExcelReadOptions <USE_TYPE>
   private int m_nLinesToSkip = DEFAULT_LINES_TO_SKIP;
   private int m_nLineIndexShortName = DEFAULT_LINEINDEX_SHORTNAME;
   private int m_nLineIndexLongName = DEFAULT_LINEINDEX_LONGNAME;
-  private final Map <Integer, ExcelReadColumn <USE_TYPE>> m_aColumns = new TreeMap <Integer, ExcelReadColumn <USE_TYPE>> ();
+  private final Map <Integer, ExcelReadColumn <USE_TYPE>> m_aColumns = new TreeMap <> ();
 
   /**
    * Constructor

@@ -127,7 +127,7 @@ public final class Genericode04Helper
   @ReturnsMutableCopy
   public static List <Column> getAllColumns (@Nonnull final ColumnSet aColumnSet)
   {
-    final List <Column> ret = new ArrayList <Column> ();
+    final List <Column> ret = new ArrayList <> ();
     for (final Object o : aColumnSet.getColumnChoice ())
       if (o instanceof Column)
         ret.add ((Column) o);
@@ -146,7 +146,7 @@ public final class Genericode04Helper
   @ReturnsMutableCopy
   public static List <String> getAllColumnIDs (@Nonnull final ColumnSet aColumnSet)
   {
-    final List <String> ret = new ArrayList <String> ();
+    final List <String> ret = new ArrayList <> ();
     for (final Column aColumn : getAllColumns (aColumnSet))
       ret.add (aColumn.getId ());
     return ret;
@@ -183,7 +183,7 @@ public final class Genericode04Helper
   @ReturnsMutableCopy
   public static List <Key> getAllKeys (@Nonnull final ColumnSet aColumnSet)
   {
-    final List <Key> ret = new ArrayList <Key> ();
+    final List <Key> ret = new ArrayList <> ();
     for (final Object o : aColumnSet.getKeyChoice ())
       if (o instanceof Key)
         ret.add ((Key) o);
@@ -202,7 +202,7 @@ public final class Genericode04Helper
   @ReturnsMutableCopy
   public static List <String> getAllKeyIDs (@Nonnull final ColumnSet aColumnSet)
   {
-    final List <String> ret = new ArrayList <String> ();
+    final List <String> ret = new ArrayList <> ();
     for (final Key aKey : getAllKeys (aColumnSet))
       ret.add (aKey.getId ());
     return ret;
