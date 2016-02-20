@@ -21,7 +21,7 @@ import java.util.List;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.annotation.PresentForCodeCoverage;
-import com.helger.commons.collection.ext.CommonsArrayList;
+import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.io.resource.IReadableResource;
 
@@ -34,8 +34,8 @@ import com.helger.commons.io.resource.IReadableResource;
 public final class CCVA
 {
   /** 1.0 XSD resources */
-  public static final List <? extends IReadableResource> CVA_10_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/ContextValueAssociation-1.0.xsd"),
-                                                                                                new ClassPathResource ("/schemas/xml.xsd")).getAsUnmodifiable ();
+  public static final List <? extends IReadableResource> CVA_10_XSDS = CollectionHelper.makeUnmodifiable (new ClassPathResource ("/schemas/ContextValueAssociation-1.0.xsd"),
+                                                                                                          new ClassPathResource ("/schemas/xml.xsd"));
 
   @SuppressWarnings ("unused")
   @PresentForCodeCoverage

@@ -16,15 +16,12 @@
  */
 package com.helger.genericode;
 
-import java.util.List;
-
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.collection.ext.CommonsArrayList;
 import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.lang.ClassHelper;
@@ -73,8 +70,8 @@ public final class Genericode10Helper
       return ((Column) aColumnElement).getId ();
     if (aColumnElement instanceof Key)
     {
-      final List <KeyColumnRef> aKeyColumnRefs = ((Key) aColumnElement).getColumnRef ();
-      final KeyColumnRef aKeyColumnRef = CollectionHelper.getFirstElement (aKeyColumnRefs);
+      final ICommonsList <KeyColumnRef> aKeyColumnRefs = ((Key) aColumnElement).getColumnRef ();
+      final KeyColumnRef aKeyColumnRef = aKeyColumnRefs.getFirst ();
       if (aKeyColumnRef == null)
         throw new IllegalArgumentException ("Key contains not KeyColumnRef!!");
       final Object aRef = aKeyColumnRef.getRef ();
