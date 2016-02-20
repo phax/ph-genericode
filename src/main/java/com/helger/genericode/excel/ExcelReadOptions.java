@@ -16,10 +16,6 @@
  */
 package com.helger.genericode.excel;
 
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
-
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
@@ -28,7 +24,9 @@ import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.CommonsTreeMap;
+import com.helger.commons.collection.ext.ICommonsList;
+import com.helger.commons.collection.ext.ICommonsMap;
 
 /**
  * This class contains the options that are used to read the Excel file.
@@ -48,7 +46,7 @@ public class ExcelReadOptions <USE_TYPE>
   private int m_nLinesToSkip = DEFAULT_LINES_TO_SKIP;
   private int m_nLineIndexShortName = DEFAULT_LINEINDEX_SHORTNAME;
   private int m_nLineIndexLongName = DEFAULT_LINEINDEX_LONGNAME;
-  private final Map <Integer, ExcelReadColumn <USE_TYPE>> m_aColumns = new TreeMap <> ();
+  private final ICommonsMap <Integer, ExcelReadColumn <USE_TYPE>> m_aColumns = new CommonsTreeMap <> ();
 
   /**
    * Constructor
@@ -142,7 +140,7 @@ public class ExcelReadOptions <USE_TYPE>
     final Integer aIndex = Integer.valueOf (nIndex);
     if (m_aColumns.containsKey (aIndex))
       throw new IllegalArgumentException ("The column at index " + nIndex + " is already mapped!");
-    m_aColumns.put (aIndex, new ExcelReadColumn <USE_TYPE> (nIndex, sColumnID, eUseType, sDataType, bKeyColumn));
+    m_aColumns.put (aIndex, new ExcelReadColumn <> (nIndex, sColumnID, eUseType, sDataType, bKeyColumn));
     return this;
   }
 
@@ -151,9 +149,9 @@ public class ExcelReadOptions <USE_TYPE>
    */
   @Nonnull
   @ReturnsMutableCopy
-  public List <ExcelReadColumn <USE_TYPE>> getAllColumns ()
+  public ICommonsList <ExcelReadColumn <USE_TYPE>> getAllColumns ()
   {
     // Create a copy. Values are sorted ascending because of the TreeMap usage
-    return CollectionHelper.newList (m_aColumns.values ());
+    return m_aColumns.copyOfValues ();
   }
 }

@@ -16,7 +16,6 @@
  */
 package com.helger.genericode;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Nonnull;
@@ -26,6 +25,8 @@ import javax.annotation.concurrent.Immutable;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.CommonsArrayList;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.lang.ClassHelper;
 import com.helger.commons.string.StringHelper;
 import com.helger.genericode.v04.Column;
@@ -125,9 +126,9 @@ public final class Genericode04Helper
    */
   @Nonnull
   @ReturnsMutableCopy
-  public static List <Column> getAllColumns (@Nonnull final ColumnSet aColumnSet)
+  public static ICommonsList <Column> getAllColumns (@Nonnull final ColumnSet aColumnSet)
   {
-    final List <Column> ret = new ArrayList <> ();
+    final ICommonsList <Column> ret = new CommonsArrayList <> ();
     for (final Object o : aColumnSet.getColumnChoice ())
       if (o instanceof Column)
         ret.add ((Column) o);
@@ -144,9 +145,9 @@ public final class Genericode04Helper
    */
   @Nonnull
   @ReturnsMutableCopy
-  public static List <String> getAllColumnIDs (@Nonnull final ColumnSet aColumnSet)
+  public static ICommonsList <String> getAllColumnIDs (@Nonnull final ColumnSet aColumnSet)
   {
-    final List <String> ret = new ArrayList <> ();
+    final ICommonsList <String> ret = new CommonsArrayList <> ();
     for (final Column aColumn : getAllColumns (aColumnSet))
       ret.add (aColumn.getId ());
     return ret;
@@ -181,9 +182,9 @@ public final class Genericode04Helper
    */
   @Nonnull
   @ReturnsMutableCopy
-  public static List <Key> getAllKeys (@Nonnull final ColumnSet aColumnSet)
+  public static ICommonsList <Key> getAllKeys (@Nonnull final ColumnSet aColumnSet)
   {
-    final List <Key> ret = new ArrayList <> ();
+    final ICommonsList <Key> ret = new CommonsArrayList <> ();
     for (final Object o : aColumnSet.getKeyChoice ())
       if (o instanceof Key)
         ret.add ((Key) o);
@@ -200,9 +201,9 @@ public final class Genericode04Helper
    */
   @Nonnull
   @ReturnsMutableCopy
-  public static List <String> getAllKeyIDs (@Nonnull final ColumnSet aColumnSet)
+  public static ICommonsList <String> getAllKeyIDs (@Nonnull final ColumnSet aColumnSet)
   {
-    final List <String> ret = new ArrayList <> ();
+    final ICommonsList <String> ret = new CommonsArrayList <> ();
     for (final Key aKey : getAllKeys (aColumnSet))
       ret.add (aKey.getId ());
     return ret;

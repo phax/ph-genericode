@@ -17,7 +17,6 @@
 package com.helger.genericode.excel;
 
 import java.net.URI;
-import java.util.List;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -28,6 +27,7 @@ import javax.xml.namespace.QName;
 import org.apache.poi.ss.usermodel.Sheet;
 
 import com.helger.commons.ValueEnforcer;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.string.StringHelper;
 import com.helger.genericode.Genericode04Helper;
 import com.helger.genericode.v04.Annotation;
@@ -96,7 +96,7 @@ public final class ExcelSheetToCodeList04
     ret.setIdentification (aIdentification);
 
     // create columns
-    final List <ExcelReadColumn <UseType>> aExcelColumns = aReadOptions.getAllColumns ();
+    final ICommonsList <ExcelReadColumn <UseType>> aExcelColumns = aReadOptions.getAllColumns ();
     final ColumnSet aColumnSet = aFactory.createColumnSet ();
     for (final ExcelReadColumn <UseType> aExcelColumn : aExcelColumns)
     {
