@@ -151,7 +151,8 @@ public class ExcelReadOptions <USE_TYPE>
   @ReturnsMutableCopy
   public ICommonsList <ExcelReadColumn <USE_TYPE>> getAllColumns ()
   {
-    // Create a copy. Values are sorted ascending because of the TreeMap usage
+    // Create a copy. Values are sorted ascending because of the CommonsTreeMap
+    // usage
     return m_aColumns.copyOfValues ();
   }
 }
