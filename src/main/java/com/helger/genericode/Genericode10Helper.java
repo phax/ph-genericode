@@ -16,12 +16,14 @@
  */
 package com.helger.genericode;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
@@ -129,10 +131,21 @@ public final class Genericode10Helper
   public static ICommonsList <Column> getAllColumns (@Nonnull final ColumnSet aColumnSet)
   {
     final ICommonsList <Column> ret = new CommonsArrayList <> ();
-    for (final Object o : aColumnSet.getColumnChoice ())
-      if (o instanceof Column)
-        ret.add ((Column) o);
+    getAllColumns (aColumnSet, ret);
     return ret;
+  }
+
+  /**
+   * Get all contained columns
+   *
+   * @param aColumnSet
+   *        The column set to scan. May not be <code>null</code>.
+   * @return A non-<code>null</code> list of all columns. Never
+   *         <code>null</code> but maybe empty.
+   */
+  public static void getAllColumns (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <Column> aTarget)
+  {
+    CollectionHelper.findAll (aColumnSet.getColumnChoice (), o -> o instanceof Column, o -> aTarget.add ((Column) o));
   }
 
   /**
@@ -148,9 +161,23 @@ public final class Genericode10Helper
   public static ICommonsList <String> getAllColumnIDs (@Nonnull final ColumnSet aColumnSet)
   {
     final ICommonsList <String> ret = new CommonsArrayList <> ();
-    for (final Column aColumn : getAllColumns (aColumnSet))
-      ret.add (aColumn.getId ());
+    getAllColumnIDs (aColumnSet, ret);
     return ret;
+  }
+
+  /**
+   * Get the IDs of all contained columns
+   *
+   * @param aColumnSet
+   *        The column set to scan. May not be <code>null</code>.
+   * @param aTarget
+   *        The target collection to be filled. May not be <code>null</code>.
+   */
+  public static void getAllColumnIDs (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <String> aTarget)
+  {
+    CollectionHelper.findAll (aColumnSet.getColumnChoice (),
+                              o -> o instanceof Column,
+                              o -> aTarget.add (((Column) o).getId ()));
   }
 
   /**
@@ -185,10 +212,21 @@ public final class Genericode10Helper
   public static ICommonsList <Key> getAllKeys (@Nonnull final ColumnSet aColumnSet)
   {
     final ICommonsList <Key> ret = new CommonsArrayList <> ();
-    for (final Object o : aColumnSet.getKeyChoice ())
-      if (o instanceof Key)
-        ret.add ((Key) o);
+    getAllKeys (aColumnSet, ret);
     return ret;
+  }
+
+  /**
+   * Get all contained keys
+   *
+   * @param aColumnSet
+   *        The column set to scan. May not be <code>null</code>.
+   * @param aTarget
+   *        The target collection to be filled. May not be <code>null</code>.
+   */
+  public static void getAllKeys (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <Key> aTarget)
+  {
+    CollectionHelper.findAll (aColumnSet.getKeyChoice (), o -> o instanceof Key, o -> aTarget.add ((Key) o));
   }
 
   /**
@@ -204,9 +242,21 @@ public final class Genericode10Helper
   public static ICommonsList <String> getAllKeyIDs (@Nonnull final ColumnSet aColumnSet)
   {
     final ICommonsList <String> ret = new CommonsArrayList <> ();
-    for (final Key aKey : getAllKeys (aColumnSet))
-      ret.add (aKey.getId ());
+    getAllKeyIDs (aColumnSet, ret);
     return ret;
+  }
+
+  /**
+   * Get the IDs of all contained keys
+   *
+   * @param aColumnSet
+   *        The column set to scan. May not be <code>null</code>.
+   * @param aTarget
+   *        The target collection to be filled. May not be <code>null</code>.
+   */
+  public static void getAllKeyIDs (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <String> aTarget)
+  {
+    CollectionHelper.findAll (aColumnSet.getKeyChoice (), o -> o instanceof Key, o -> aTarget.add (((Key) o).getId ()));
   }
 
   /**
@@ -331,14 +381,10 @@ public final class Genericode10Helper
                                      @Nullable final String sLongName,
                                      @Nonnull @Nonempty final String sDataType)
   {
-    if (StringHelper.hasNoText (sColumnID))
-      throw new IllegalArgumentException ("No column ID provided!");
-    if (eUseType == null)
-      throw new NullPointerException ("useType");
-    if (StringHelper.hasNoText (sShortName))
-      throw new IllegalArgumentException ("No short name provided!");
-    if (StringHelper.hasNoText (sDataType))
-      throw new IllegalArgumentException ("No data type provided!");
+    ValueEnforcer.notEmpty (sColumnID, "ColumnID");
+    ValueEnforcer.notNull (eUseType, "useType");
+    ValueEnforcer.notEmpty (sShortName, "ShortName");
+    ValueEnforcer.notEmpty (sDataType, "DataType");
 
     final Column aColumn = s_aFactory.createColumn ();
     aColumn.setId (sColumnID);
@@ -371,12 +417,9 @@ public final class Genericode10Helper
                                @Nullable final String sLongName,
                                @Nonnull final Column aColumn)
   {
-    if (StringHelper.hasNoText (sColumnID))
-      throw new IllegalArgumentException ("No column ID provided!");
-    if (StringHelper.hasNoText (sShortName))
-      throw new IllegalArgumentException ("No short name provided!");
-    if (aColumn == null)
-      throw new NullPointerException ("column");
+    ValueEnforcer.notEmpty (sColumnID, "ColumnID");
+    ValueEnforcer.notEmpty (sShortName, "ShortName");
+    ValueEnforcer.notNull (aColumn, "Column");
 
     final Key aKey = s_aFactory.createKey ();
     aKey.setId (sColumnID);
