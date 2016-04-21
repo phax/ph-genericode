@@ -31,6 +31,7 @@ import com.helger.commons.io.file.filter.IFileFilter;
 import com.helger.commons.io.file.iterate.FileSystemIterator;
 import com.helger.commons.io.resource.FileSystemResource;
 import com.helger.commons.io.resource.IReadableResource;
+import com.helger.commons.mock.CommonsTestHelper;
 import com.helger.commons.xml.serialize.read.DOMReader;
 import com.helger.genericode.v10.CodeListDocument;
 
@@ -50,13 +51,21 @@ public final class Genericode10CodeListMarshallerTest
     final Document aDoc = DOMReader.readXMLDOM (aRes);
     assertNotNull (aRes.getPath (), aDoc);
 
+    final Genericode10CodeListMarshaller aMarshaller = new Genericode10CodeListMarshaller ();
+
     // Read code list
-    final CodeListDocument aCLDoc = new Genericode10CodeListMarshaller ().read (aDoc);
+    final CodeListDocument aCLDoc = aMarshaller.read (aDoc);
     assertNotNull (aRes.getPath (), aCLDoc);
 
     // Write again
-    final Document aDoc2 = new Genericode10CodeListMarshaller ().getAsDocument (aCLDoc);
+    final Document aDoc2 = aMarshaller.getAsDocument (aCLDoc);
     assertNotNull (aRes.getPath (), aDoc2);
+
+    // Read code list again
+    final CodeListDocument aCLDoc2 = aMarshaller.read (aDoc2);
+    assertNotNull (aRes.getPath (), aCLDoc2);
+    CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCLDoc, aCLDoc2);
+    CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCLDoc, aCLDoc.clone ());
   }
 
   @Test

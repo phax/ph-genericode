@@ -28,6 +28,7 @@ import org.xml.sax.SAXException;
 import com.helger.commons.io.file.iterate.FileSystemIterator;
 import com.helger.commons.io.resource.FileSystemResource;
 import com.helger.commons.io.resource.IReadableResource;
+import com.helger.commons.mock.CommonsTestHelper;
 import com.helger.commons.xml.serialize.read.DOMReader;
 import com.helger.genericode.v04.CodeListDocument;
 
@@ -47,13 +48,21 @@ public final class Genericode04CodeListMarshallerTest
     final Document aDoc = DOMReader.readXMLDOM (aRes);
     assertNotNull (aDoc);
 
+    final Genericode04CodeListMarshaller aMarshaller = new Genericode04CodeListMarshaller ();
+
     // Read code list
-    final CodeListDocument aCLDoc = new Genericode04CodeListMarshaller ().read (aDoc);
+    final CodeListDocument aCLDoc = aMarshaller.read (aDoc);
     assertNotNull (aCLDoc);
 
     // Write again
-    final Document aDoc2 = new Genericode04CodeListMarshaller ().getAsDocument (aCLDoc);
+    final Document aDoc2 = aMarshaller.getAsDocument (aCLDoc);
     assertNotNull (aDoc2);
+
+    // Read code list again
+    final CodeListDocument aCLDoc2 = aMarshaller.read (aDoc2);
+    assertNotNull (aRes.getPath (), aCLDoc2);
+    CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCLDoc, aCLDoc2);
+    CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCLDoc, aCLDoc.clone ());
   }
 
   @Test
