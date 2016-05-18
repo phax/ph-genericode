@@ -130,7 +130,7 @@ public final class Genericode10Helper
   @ReturnsMutableCopy
   public static ICommonsList <Column> getAllColumns (@Nonnull final ColumnSet aColumnSet)
   {
-    final ICommonsList <Column> ret = new CommonsArrayList <> ();
+    final ICommonsList <Column> ret = new CommonsArrayList<> ();
     getAllColumns (aColumnSet, ret);
     return ret;
   }
@@ -140,8 +140,9 @@ public final class Genericode10Helper
    *
    * @param aColumnSet
    *        The column set to scan. May not be <code>null</code>.
-   * @return A non-<code>null</code> list of all columns. Never
-   *         <code>null</code> but maybe empty.
+   * @param aTarget
+   *        A non-<code>null</code> list where all columns should be added. May
+   *        not be <code>null</code>.
    */
   public static void getAllColumns (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <Column> aTarget)
   {
@@ -160,7 +161,7 @@ public final class Genericode10Helper
   @ReturnsMutableCopy
   public static ICommonsList <String> getAllColumnIDs (@Nonnull final ColumnSet aColumnSet)
   {
-    final ICommonsList <String> ret = new CommonsArrayList <> ();
+    final ICommonsList <String> ret = new CommonsArrayList<> ();
     getAllColumnIDs (aColumnSet, ret);
     return ret;
   }
@@ -211,7 +212,7 @@ public final class Genericode10Helper
   @ReturnsMutableCopy
   public static ICommonsList <Key> getAllKeys (@Nonnull final ColumnSet aColumnSet)
   {
-    final ICommonsList <Key> ret = new CommonsArrayList <> ();
+    final ICommonsList <Key> ret = new CommonsArrayList<> ();
     getAllKeys (aColumnSet, ret);
     return ret;
   }
@@ -241,7 +242,7 @@ public final class Genericode10Helper
   @ReturnsMutableCopy
   public static ICommonsList <String> getAllKeyIDs (@Nonnull final ColumnSet aColumnSet)
   {
-    final ICommonsList <String> ret = new CommonsArrayList <> ();
+    final ICommonsList <String> ret = new CommonsArrayList<> ();
     getAllKeyIDs (aColumnSet, ret);
     return ret;
   }
