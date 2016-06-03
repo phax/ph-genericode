@@ -41,7 +41,6 @@ public final class CGenericode
   public static final List <? extends IReadableResource> GENERICODE_10_XSDS = CollectionHelper.makeUnmodifiable (new ClassPathResource ("/schemas/genericode-1.0.xsd"),
                                                                                                                  new ClassPathResource ("/schemas/xml.xsd"));
 
-  @SuppressWarnings ("unused")
   @PresentForCodeCoverage
   private static final CGenericode s_aInstance = new CGenericode ();
 

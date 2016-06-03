@@ -37,7 +37,6 @@ public final class CCVA
   public static final List <? extends IReadableResource> CVA_10_XSDS = CollectionHelper.makeUnmodifiable (new ClassPathResource ("/schemas/ContextValueAssociation-1.0.xsd"),
                                                                                                           new ClassPathResource ("/schemas/xml.xsd"));
 
-  @SuppressWarnings ("unused")
   @PresentForCodeCoverage
   private static final CCVA s_aInstance = new CCVA ();
 
