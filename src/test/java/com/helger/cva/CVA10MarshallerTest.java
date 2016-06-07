@@ -28,8 +28,8 @@ import org.xml.sax.SAXException;
 import com.helger.commons.io.file.iterate.FileSystemIterator;
 import com.helger.commons.io.resource.FileSystemResource;
 import com.helger.commons.io.resource.IReadableResource;
-import com.helger.commons.xml.serialize.read.DOMReader;
 import com.helger.cva.v10.ContextValueAssociation;
+import com.helger.xml.serialize.read.DOMReader;
 
 /**
  * Test class for class {@link CVA10Marshaller}.
