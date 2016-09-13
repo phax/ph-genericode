@@ -8,16 +8,18 @@ It supports GeneriCode 0.4 and GeneriCode 1.0 as well as CVA 1.0.
 #News and noteworthy
   
   * v5.0.1
-    * Added new package `com.helger.genericode.builder` with more flexible marshaller
-  * v5.0.0
+    * Added new package `com.helger.genericode.builder` with more flexible reader/writer/validator
+  * v5.0.0 - 2016-06-11
     * Requires JDK 8
     * Binds to ph-commons 8.x
-  * v4.1.1
+  * v4.1.1 - 2015-07-21
     * Last version with JDK 6 support
-  * v4.0.0
+  * v4.1.0 - 2015-07-21   
+  * v4.0.0 - 2015-07-09
     * Binds to ph-commons 6.x
-  * v3.3.1
-    * Binds to ph-commons 5.x      
+  * v3.3.1 - 2015-03-12
+    * Binds to ph-commons 5.x
+  * v3.3.0 - 2014-08-25
 
 #Usage with Maven
 ```xml
