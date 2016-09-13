@@ -2,19 +2,29 @@
 
 [![Dependencies](https://www.versioneye.com/user/projects/5641ff234d415e001b00070c/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5641ff234d415e001b00070c)
 
-
 Java library for reading and writing OASIS GeneriCode and CVA files.
+It supports GeneriCode 0.4 and GeneriCode 1.0 as well as CVA 1.0.
 
-Versions <= 3.3.1 are compatible with ph-commons < 6.0
-Versions >= 4.0.0 are compatible with ph-commons >= 6.0.
-Versions >= 5 require JDK 8.
+#News and noteworthy
+  
+  * v5.0.1
+    * Added new package `com.helger.genericode.builder` with more flexible marshaller
+  * v5.0.0
+    * Requires JDK 8
+    * Binds to ph-commons 8.x
+  * v4.1.1
+    * Last version with JDK 6 support
+  * v4.0.0
+    * Binds to ph-commons 6.x
+  * v3.3.1
+    * Binds to ph-commons 5.x      
 
 #Usage with Maven
 ```xml
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-genericode</artifactId>
-  <version>4.1.1</version>
+  <version>5.0.0</version>
 </dependency>
 ```
 
