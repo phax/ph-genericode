@@ -7,8 +7,9 @@ It supports GeneriCode 0.4 and GeneriCode 1.0 as well as CVA 1.0.
 
 #News and noteworthy
   
-  * v5.0.1
+  * v5.0.1 - 2017-01-20
     * Added new package `com.helger.genericode.builder` with more flexible reader/writer/validator
+    * Binds to ph-commons 8.6.x
   * v5.0.0 - 2016-06-11
     * Requires JDK 8
     * Binds to ph-commons 8.x
@@ -26,7 +27,7 @@ It supports GeneriCode 0.4 and GeneriCode 1.0 as well as CVA 1.0.
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-genericode</artifactId>
-  <version>5.0.0</version>
+  <version>5.0.1</version>
 </dependency>
 ```
 
