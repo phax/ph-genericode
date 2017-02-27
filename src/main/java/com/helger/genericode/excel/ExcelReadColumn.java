@@ -116,6 +116,6 @@ public class ExcelReadColumn <USE_TYPE>
                                        .append ("use", m_eUseType)
                                        .append ("dataType", m_sDataType)
                                        .append ("keyColumn", m_bKeyColumn)
-                                       .toString ();
+                                       .getToString ();
   }
 }
