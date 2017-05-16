@@ -20,8 +20,9 @@ import java.util.List;
 
 import javax.annotation.concurrent.Immutable;
 
+import com.helger.commons.annotation.CodingStyleguideUnaware;
 import com.helger.commons.annotation.PresentForCodeCoverage;
-import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.CommonsArrayList;
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.io.resource.IReadableResource;
 
@@ -34,12 +35,14 @@ import com.helger.commons.io.resource.IReadableResource;
 public final class CGenericode
 {
   /** 0.4 XSD resources */
-  public static final List <? extends IReadableResource> GENERICODE_04_XSDS = CollectionHelper.makeUnmodifiable (new ClassPathResource ("/schemas/genericode-code-list-0.4.xsd"),
-                                                                                                                 new ClassPathResource ("/schemas/xml.xsd"));
+  @CodingStyleguideUnaware
+  public static final List <? extends IReadableResource> GENERICODE_04_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/genericode-code-list-0.4.xsd"),
+                                                                                                       new ClassPathResource ("/schemas/xml.xsd")).getAsUnmodifiable ();
 
   /** 1.0 XSD resources */
-  public static final List <? extends IReadableResource> GENERICODE_10_XSDS = CollectionHelper.makeUnmodifiable (new ClassPathResource ("/schemas/genericode-1.0.xsd"),
-                                                                                                                 new ClassPathResource ("/schemas/xml.xsd"));
+  @CodingStyleguideUnaware
+  public static final List <? extends IReadableResource> GENERICODE_10_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/genericode-1.0.xsd"),
+                                                                                                       new ClassPathResource ("/schemas/xml.xsd")).getAsUnmodifiable ();
 
   @PresentForCodeCoverage
   private static final CGenericode s_aInstance = new CGenericode ();
