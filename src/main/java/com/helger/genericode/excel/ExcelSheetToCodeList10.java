@@ -27,7 +27,7 @@ import javax.xml.namespace.QName;
 import org.apache.poi.ss.usermodel.Sheet;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.collection.ext.ICommonsList;
+import com.helger.commons.collection.impl.ICommonsList;
 import com.helger.commons.string.StringHelper;
 import com.helger.genericode.Genericode10Helper;
 import com.helger.genericode.v10.Annotation;
