@@ -39,7 +39,7 @@ public class GenericodeWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, Ge
     // Create a special namespace context for the passed document type
     final MapBasedNamespaceContext aNSContext = new MapBasedNamespaceContext ();
     aNSContext.addMapping ("gc", m_aDocType.getNamespaceURI ());
-    aNSContext.setDefaultNamespaceURI ("");
+    aNSContext.addDefaultNamespaceURI ("");
     setNamespaceContext (aNSContext);
   }
 
