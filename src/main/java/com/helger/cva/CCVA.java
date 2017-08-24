@@ -18,6 +18,7 @@ package com.helger.cva;
 
 import java.util.List;
 
+import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.annotation.CodingStyleguideUnaware;
@@ -34,10 +35,18 @@ import com.helger.commons.io.resource.IReadableResource;
 @Immutable
 public final class CCVA
 {
+  @Nonnull
+  private static ClassLoader _getCL ()
+  {
+    return CCVA.class.getClassLoader ();
+  }
+
   /** 1.0 XSD resources */
   @CodingStyleguideUnaware
-  public static final List <? extends IReadableResource> CVA_10_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/ContextValueAssociation-1.0.xsd"),
-                                                                                                new ClassPathResource ("/schemas/xml.xsd")).getAsUnmodifiable ();
+  public static final List <? extends IReadableResource> CVA_10_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/ContextValueAssociation-1.0.xsd",
+                                                                                                                       _getCL ()),
+                                                                                                new ClassPathResource ("/schemas/xml.xsd",
+                                                                                                                       _getCL ())).getAsUnmodifiable ();
 
   @PresentForCodeCoverage
   private static final CCVA s_aInstance = new CCVA ();

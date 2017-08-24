@@ -18,15 +18,15 @@ package com.helger.genericode;
 
 import com.helger.genericode.v10.ColumnSetDocument;
 import com.helger.genericode.v10.ObjectFactory;
-import com.helger.jaxb.AbstractJAXBMarshaller;
+import com.helger.jaxb.GenericJAXBMarshaller;
 
 /**
  * This is the reader and writer for Genericode 1.0 column sets. This class may
- * be derived to override protected methods from {@link AbstractJAXBMarshaller}.
+ * be derived to override protected methods from {@link GenericJAXBMarshaller}.
  *
  * @author Philip Helger
  */
-public class Genericode10ColumnSetMarshaller extends AbstractJAXBMarshaller <ColumnSetDocument>
+public class Genericode10ColumnSetMarshaller extends GenericJAXBMarshaller <ColumnSetDocument>
 {
   /**
    * Constructor

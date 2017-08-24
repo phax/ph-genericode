@@ -18,15 +18,15 @@ package com.helger.cva;
 
 import com.helger.cva.v10.ContextValueAssociation;
 import com.helger.cva.v10.ObjectFactory;
-import com.helger.jaxb.AbstractJAXBMarshaller;
+import com.helger.jaxb.GenericJAXBMarshaller;
 
 /**
  * This is the reader and writer for CVA 1.0 documents. This class may be
- * derived to override protected methods from {@link AbstractJAXBMarshaller}.
+ * derived to override protected methods from {@link GenericJAXBMarshaller}.
  *
  * @author Philip Helger
  */
-public class CVA10Marshaller extends AbstractJAXBMarshaller <ContextValueAssociation>
+public class CVA10Marshaller extends GenericJAXBMarshaller <ContextValueAssociation>
 {
   /**
    * Constructor

@@ -18,15 +18,15 @@ package com.helger.genericode;
 
 import com.helger.genericode.v04.CodeListDocument;
 import com.helger.genericode.v04.ObjectFactory;
-import com.helger.jaxb.AbstractJAXBMarshaller;
+import com.helger.jaxb.GenericJAXBMarshaller;
 
 /**
  * This is the reader and writer for Genericode 0.4 code lists. This class may
- * be derived to override protected methods from {@link AbstractJAXBMarshaller}.
+ * be derived to override protected methods from {@link GenericJAXBMarshaller}.
  *
  * @author Philip Helger
  */
-public class Genericode04CodeListMarshaller extends AbstractJAXBMarshaller <CodeListDocument>
+public class Genericode04CodeListMarshaller extends GenericJAXBMarshaller <CodeListDocument>
 {
   /**
    * Constructor
