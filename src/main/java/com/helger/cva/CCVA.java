@@ -25,7 +25,6 @@ import com.helger.commons.annotation.CodingStyleguideUnaware;
 import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.commons.collection.impl.CommonsArrayList;
 import com.helger.commons.io.resource.ClassPathResource;
-import com.helger.commons.io.resource.IReadableResource;
 
 /**
  * Constants for the handling of ContextValueAssociation documents
@@ -43,10 +42,10 @@ public final class CCVA
 
   /** 1.0 XSD resources */
   @CodingStyleguideUnaware
-  public static final List <? extends IReadableResource> CVA_10_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/ContextValueAssociation-1.0.xsd",
-                                                                                                                       _getCL ()),
-                                                                                                new ClassPathResource ("/schemas/xml.xsd",
-                                                                                                                       _getCL ())).getAsUnmodifiable ();
+  public static final List <ClassPathResource> CVA_10_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/ContextValueAssociation-1.0.xsd",
+                                                                                                             _getCL ()),
+                                                                                      new ClassPathResource ("/schemas/xml.xsd",
+                                                                                                             _getCL ())).getAsUnmodifiable ();
 
   @PresentForCodeCoverage
   private static final CCVA s_aInstance = new CCVA ();

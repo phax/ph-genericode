@@ -25,7 +25,6 @@ import com.helger.commons.annotation.CodingStyleguideUnaware;
 import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.commons.collection.impl.CommonsArrayList;
 import com.helger.commons.io.resource.ClassPathResource;
-import com.helger.commons.io.resource.IReadableResource;
 
 /**
  * Constants for the handling of Genericode documents
@@ -43,17 +42,17 @@ public final class CGenericode
 
   /** 0.4 XSD resources */
   @CodingStyleguideUnaware
-  public static final List <? extends IReadableResource> GENERICODE_04_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/genericode-code-list-0.4.xsd",
-                                                                                                                              _getCL ()),
-                                                                                                       new ClassPathResource ("/schemas/xml.xsd",
-                                                                                                                              _getCL ())).getAsUnmodifiable ();
+  public static final List <ClassPathResource> GENERICODE_04_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/genericode-code-list-0.4.xsd",
+                                                                                                                    _getCL ()),
+                                                                                             new ClassPathResource ("/schemas/xml.xsd",
+                                                                                                                    _getCL ())).getAsUnmodifiable ();
 
   /** 1.0 XSD resources */
   @CodingStyleguideUnaware
-  public static final List <? extends IReadableResource> GENERICODE_10_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/genericode-1.0.xsd",
-                                                                                                                              _getCL ()),
-                                                                                                       new ClassPathResource ("/schemas/xml.xsd",
-                                                                                                                              _getCL ())).getAsUnmodifiable ();
+  public static final List <ClassPathResource> GENERICODE_10_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/genericode-1.0.xsd",
+                                                                                                                    _getCL ()),
+                                                                                             new ClassPathResource ("/schemas/xml.xsd",
+                                                                                                                    _getCL ())).getAsUnmodifiable ();
 
   @PresentForCodeCoverage
   private static final CGenericode s_aInstance = new CGenericode ();
