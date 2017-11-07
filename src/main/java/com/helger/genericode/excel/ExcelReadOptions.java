@@ -16,6 +16,8 @@
  */
 package com.helger.genericode.excel;
 
+import java.io.Serializable;
+
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
@@ -36,7 +38,7 @@ import com.helger.commons.collection.impl.ICommonsMap;
  *        The UseType of either GeneriCode 0.4 or 1.0
  */
 @NotThreadSafe
-public class ExcelReadOptions <USE_TYPE>
+public class ExcelReadOptions <USE_TYPE extends Serializable> implements Serializable
 {
   /** Default lines to skip */
   public static final int DEFAULT_LINES_TO_SKIP = 0;

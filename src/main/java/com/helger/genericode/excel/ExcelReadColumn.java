@@ -16,6 +16,8 @@
  */
 package com.helger.genericode.excel;
 
+import java.io.Serializable;
+
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
@@ -33,7 +35,7 @@ import com.helger.commons.string.ToStringGenerator;
  *        The UseType of either GeneriCode 0.4 or 1.0
  */
 @Immutable
-public class ExcelReadColumn <USE_TYPE>
+public class ExcelReadColumn <USE_TYPE extends Serializable> implements Serializable
 {
   private final int m_nIndex;
   private final String m_sColumnID;
