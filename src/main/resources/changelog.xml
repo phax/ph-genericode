@@ -18,6 +18,19 @@
 
 -->
 <changelog xmlns="http://www.helger.com/xsd/changelog/1.0" version="1.0" component="ph-genericode">
+  <release date="2017-11-07" version="6.0.0" />
+  <entry date="2017-11-07" category="tech" action="update">
+    <change>
+      <text locale="en">Updated to ph-poi 5.0.0</text>
+    </change>
+  </entry>
+  <entry date="2017-11-07" category="tech" action="update">
+    <change>
+      <text locale="en">Updated to ph-commons 9.0.0</text>
+    </change>
+  </entry>
+  <release date="2017-01-20" version="5.0.1" />
+  <release date="2016-06-11" version="5.0.0" />
   <release date="2015-07-21" version="4.1.1" />
   <entry date="2015-07-21" category="tech" action="update">
     <change>

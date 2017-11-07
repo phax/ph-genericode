@@ -6,7 +6,7 @@ Java library for reading and writing OASIS GeneriCode and CVA files.
 It supports GeneriCode 0.4 and GeneriCode 1.0 as well as CVA 1.0.
 
 # News and noteworthy
-  * v6.0.0 - work in progress
+  * v6.0.0 - 2017-11-07
     * Updated to ph-commons 9.0.0
   * v5.0.1 - 2017-01-20
     * Added new package `com.helger.genericode.builder` with more flexible reader/writer/validator
@@ -28,7 +28,7 @@ It supports GeneriCode 0.4 and GeneriCode 1.0 as well as CVA 1.0.
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-genericode</artifactId>
-  <version>5.0.1</version>
+  <version>6.0.0</version>
 </dependency>
 ```
 
