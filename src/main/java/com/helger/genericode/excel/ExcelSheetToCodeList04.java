@@ -54,7 +54,8 @@ import com.helger.poi.excel.ExcelReadHelper;
 @Immutable
 public final class ExcelSheetToCodeList04
 {
-  private static final QName QNAME_ANNOTATION = new QName ("urn:www.helger.com:schemas:genericode-ext", "info");
+  public static final String ANNOTATION_NS = "urn:www.helger.com:schemas:genericode-ext";
+  public static final QName QNAME_ANNOTATION = new QName (ANNOTATION_NS, "info");
 
   private ExcelSheetToCodeList04 ()
   {}
@@ -78,7 +79,7 @@ public final class ExcelSheetToCodeList04
     final Annotation aAnnotation = aFactory.createAnnotation ();
     final AnyOtherContent aContent = aFactory.createAnyOtherContent ();
     aContent.getAny ()
-            .add (new JAXBElement <String> (QNAME_ANNOTATION,
+            .add (new JAXBElement <> (QNAME_ANNOTATION,
                                             String.class,
                                             null,
                                             "Automatically created by ph-genericode. Do NOT edit."));
@@ -125,8 +126,7 @@ public final class ExcelSheetToCodeList04
       if (aExcelColumn.isKeyColumn ())
       {
         // Create key definition
-        final Key aKey = Genericode04Helper.createKey (aExcelColumn.getColumnID () +
-                                                       "Key",
+        final Key aKey = Genericode04Helper.createKey (aExcelColumn.getColumnID () + "Key",
                                                        sShortName,
                                                        sLongName,
                                                        aColumn);
