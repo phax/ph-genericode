@@ -34,6 +34,8 @@ import com.helger.commons.io.resource.ClassPathResource;
 @Immutable
 public final class CCVA
 {
+  public static final String CVA_10_NAMESPACE_URI = "http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/";
+
   @Nonnull
   private static ClassLoader _getCL ()
   {

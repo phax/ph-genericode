@@ -34,6 +34,9 @@ import com.helger.commons.io.resource.ClassPathResource;
 @Immutable
 public final class CGenericode
 {
+  public static final String GENERICODE_04_NAMESPACE_URI = "http://genericode.org/2006/ns/CodeList/0.4/";
+  public static final String GENERICODE_10_NAMESPACE_URI = "http://docs.oasis-open.org/codelist/ns/genericode/1.0/";
+
   @Nonnull
   private static ClassLoader _getCL ()
   {
