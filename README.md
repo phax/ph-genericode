@@ -9,6 +9,7 @@ It supports GeneriCode 0.4 and GeneriCode 1.0 as well as CVA 1.0.
 
 * v6.0.1 - work in progress
     * Added namespace URI constants in the Cxxx files.
+    * Requires ph-commons 9.1.8
 * v6.0.0 - 2017-11-07
     * Updated to ph-commons 9.0.0
 * v5.0.1 - 2017-01-20
