@@ -19,14 +19,12 @@ package com.helger.genericode.builder;
 import java.util.List;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.xml.validation.Schema;
 
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.collection.impl.CommonsArrayList;
 import com.helger.commons.collection.impl.ICommonsList;
-import com.helger.commons.io.resource.IReadableResource;
+import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.string.StringHelper;
 import com.helger.genericode.CGenericode;
 import com.helger.jaxb.builder.IJAXBDocumentType;
@@ -49,11 +47,9 @@ public enum EGenericodeDocumentType implements IJAXBDocumentType
   private final JAXBDocumentType m_aDocType;
 
   private EGenericodeDocumentType (@Nonnull final Class <?> aClass,
-                                   @Nonnull final List <? extends IReadableResource> aXSDPaths)
+                                   @Nonnull final List <? extends ClassPathResource> aXSDPaths)
   {
-    m_aDocType = new JAXBDocumentType (aClass,
-                                       new CommonsArrayList<> (aXSDPaths, IReadableResource::getPath),
-                                       x -> StringHelper.trimEnd (x, "Document"));
+    m_aDocType = new JAXBDocumentType (aClass, aXSDPaths, x -> StringHelper.trimEnd (x, "Document"));
   }
 
   @Nonnull
@@ -65,9 +61,9 @@ public enum EGenericodeDocumentType implements IJAXBDocumentType
   @Nonnull
   @Nonempty
   @ReturnsMutableCopy
-  public ICommonsList <String> getAllXSDPaths ()
+  public ICommonsList <ClassPathResource> getAllXSDResources ()
   {
-    return m_aDocType.getAllXSDPaths ();
+    return m_aDocType.getAllXSDResources ();
   }
 
   @Nonnull
@@ -84,8 +80,8 @@ public enum EGenericodeDocumentType implements IJAXBDocumentType
   }
 
   @Nonnull
-  public Schema getSchema (@Nullable final ClassLoader aClassLoader)
+  public Schema getSchema ()
   {
-    return m_aDocType.getSchema (aClassLoader);
+    return m_aDocType.getSchema ();
   }
 }
