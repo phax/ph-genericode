@@ -25,7 +25,6 @@ import javax.annotation.Nonnull;
 
 import org.junit.Test;
 import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
 import com.helger.commons.io.file.FileSystemIterator;
 import com.helger.commons.io.file.IFileFilter;
@@ -42,7 +41,7 @@ import com.helger.xml.serialize.read.DOMReader;
  */
 public final class Genericode10CodeListMarshallerTest
 {
-  private static void _testReadAndWriteValid (@Nonnull final IReadableResource aRes) throws SAXException
+  private static void _testReadAndWriteValid (@Nonnull final IReadableResource aRes)
   {
     // Resolve resource
     assertTrue (aRes.exists ());
@@ -69,7 +68,7 @@ public final class Genericode10CodeListMarshallerTest
   }
 
   @Test
-  public void testReadValid () throws SAXException
+  public void testReadValid ()
   {
     for (final File aFile : new FileSystemIterator ("src/test/resources/examples/gc/v10").withFilter (IFileFilter.filenameEndsWith (".gc")))
       _testReadAndWriteValid (new FileSystemResource (aFile));

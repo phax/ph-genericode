@@ -21,9 +21,10 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 
+import javax.annotation.Nonnull;
+
 import org.junit.Test;
 import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
 import com.helger.commons.io.file.FileSystemIterator;
 import com.helger.commons.io.file.IFileFilter;
@@ -39,7 +40,7 @@ import com.helger.xml.serialize.read.DOMReader;
  */
 public final class GenericodeReaderTest
 {
-  private static void _testReadAndWrite04 (final IReadableResource aRes) throws SAXException
+  private static void _testReadAndWrite04 (final IReadableResource aRes)
   {
     // Resolve resource
     assertTrue (aRes.exists ());
@@ -64,14 +65,14 @@ public final class GenericodeReaderTest
   }
 
   @Test
-  public void testReadWrite04 () throws SAXException
+  public void testReadWrite04 ()
   {
     for (final File aFile : new FileSystemIterator ("src/test/resources/examples/gc/v04"))
       if (aFile.isFile ())
         _testReadAndWrite04 (new FileSystemResource (aFile));
   }
 
-  private static void _testReadAndWrite10 (final IReadableResource aRes) throws SAXException
+  private static void _testReadAndWrite10 (@Nonnull final IReadableResource aRes)
   {
     // Resolve resource
     assertTrue (aRes.exists ());
@@ -96,7 +97,7 @@ public final class GenericodeReaderTest
   }
 
   @Test
-  public void testReadWrite10 () throws SAXException
+  public void testReadWrite10 ()
   {
     for (final File aFile : new FileSystemIterator ("src/test/resources/examples/gc/v10").withFilter (IFileFilter.filenameEndsWith (".gc")))
       if (aFile.isFile ())

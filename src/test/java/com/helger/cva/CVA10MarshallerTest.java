@@ -21,9 +21,10 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 
+import javax.annotation.Nonnull;
+
 import org.junit.Test;
 import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
 import com.helger.commons.io.file.FileSystemIterator;
 import com.helger.commons.io.resource.FileSystemResource;
@@ -38,7 +39,7 @@ import com.helger.xml.serialize.read.DOMReader;
  */
 public final class CVA10MarshallerTest
 {
-  private static void _testReadAndWriteValid (final IReadableResource aRes) throws SAXException
+  private static void _testReadAndWriteValid (@Nonnull final IReadableResource aRes)
   {
     // Resolve resource
     assertTrue (aRes.exists ());
@@ -57,7 +58,7 @@ public final class CVA10MarshallerTest
   }
 
   @Test
-  public void testReadValid () throws SAXException
+  public void testReadValid ()
   {
     for (final File aFile : new FileSystemIterator ("src/test/resources/examples/cva/v10"))
       if (aFile.isFile ())
