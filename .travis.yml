@@ -20,6 +20,10 @@ cache:
   directories:
     - $HOME/.m2
 
+branches:
+  only:
+    - master
+
 jobs:
   include:
     - stage: test
