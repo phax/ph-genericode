@@ -31,6 +31,7 @@
   <description>Library to read and write OASIS GeneriCode and CVA documents</description>
   <url>https://github.com/phax/ph-genericode</url>
   <inceptionYear>2014</inceptionYear>
+
   <licenses>
     <license>
       <name>Apache 2</name>
@@ -38,16 +39,19 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
+
   <scm>
     <connection>scm:git:git@github.com:phax/ph-genericode.git</connection>
     <developerConnection>scm:git:git@github.com:phax/ph-genericode.git</developerConnection>
     <url>http://github.com/phax/ph-genericode</url>
     <tag>HEAD</tag>
   </scm>
+
   <organization>
     <name>Philip Helger</name>
     <url>http://www.helger.com</url>
   </organization>
+
   <developers>
     <developer>
       <id>philip</id>
@@ -56,6 +60,7 @@
       <url>http://www.helger.com</url>
     </developer>
   </developers>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -68,10 +73,11 @@
       <dependency>
         <groupId>com.helger</groupId>
         <artifactId>ph-poi</artifactId>
-        <version>5.0.3-SNAPSHOT</version>
+        <version>5.0.3</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>com.helger</groupId>
@@ -85,11 +91,13 @@
       <groupId>com.helger</groupId>
       <artifactId>ph-jaxb</artifactId>
     </dependency>
+
     <dependency>
       <groupId>com.helger</groupId>
       <artifactId>ph-poi</artifactId>
       <optional>true</optional>
     </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -101,6 +109,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <build>
     <plugins>
       <plugin>
@@ -165,7 +174,7 @@
           <dependency>
             <groupId>com.helger</groupId>
             <artifactId>ph-jaxb22-plugin</artifactId>
-            <version>2.2.11.14-SNAPSHOT</version>
+            <version>2.3.1.1</version>
           </dependency>
         </dependencies>
       </plugin>

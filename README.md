@@ -7,9 +7,9 @@ It supports GeneriCode 0.4 and GeneriCode 1.0 as well as CVA 1.0.
 
 # News and noteworthy
 
-* v6.1.0 - work in progress
+* v6.1.0 - 2018-11-22
     * Added namespace URI constants in the Cxxx files.
-    * Requires ph-commons 9.2.0
+    * Updated to ph-commons 9.2.0
 * v6.0.0 - 2017-11-07
     * Updated to ph-commons 9.0.0
 * v5.0.1 - 2017-01-20
@@ -33,7 +33,7 @@ It supports GeneriCode 0.4 and GeneriCode 1.0 as well as CVA 1.0.
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-genericode</artifactId>
-  <version>6.0.0</version>
+  <version>6.1.0</version>
 </dependency>
 ```
 
