@@ -78,11 +78,10 @@ public final class ExcelSheetToCodeList10
     // create annotation
     final Annotation aAnnotation = aFactory.createAnnotation ();
     final AnyOtherContent aContent = aFactory.createAnyOtherContent ();
-    aContent.getAny ()
-            .add (new JAXBElement <> (QNAME_ANNOTATION,
-                                            String.class,
-                                            null,
-                                            "Automatically created by ph-genericode. Do NOT edit."));
+    aContent.addAny (new JAXBElement <> (QNAME_ANNOTATION,
+                                         String.class,
+                                         null,
+                                         "Automatically created by ph-genericode. Do NOT edit."));
     aAnnotation.setAppInfo (aContent);
     ret.setAnnotation (aAnnotation);
 
@@ -93,7 +92,7 @@ public final class ExcelSheetToCodeList10
     aIdentification.setCanonicalUri (aCanonicalUri.toString ());
     aIdentification.setCanonicalVersionUri (aCanonicalVersionUri.toString ());
     if (aLocationURI != null)
-      aIdentification.getLocationUri ().add (aLocationURI.toString ());
+      aIdentification.addLocationUri (aLocationURI.toString ());
     ret.setIdentification (aIdentification);
 
     // create columns
@@ -121,7 +120,7 @@ public final class ExcelSheetToCodeList10
                                                               aExcelColumn.getDataType ());
 
       // add column
-      aColumnSet.getColumnChoice ().add (aColumn);
+      aColumnSet.addColumnChoice (aColumn);
 
       if (aExcelColumn.isKeyColumn ())
       {
@@ -132,7 +131,7 @@ public final class ExcelSheetToCodeList10
                                                        aColumn);
 
         // Add key
-        aColumnSet.getKeyChoice ().add (aKey);
+        aColumnSet.addKeyChoice (aKey);
       }
     }
     ret.setColumnSet (aColumnSet);
@@ -160,10 +159,10 @@ public final class ExcelSheetToCodeList10
           final Value aValue = aFactory.createValue ();
           aValue.setColumnRef (Genericode10Helper.getColumnOfID (aColumnSet, aExcelColumn.getColumnID ()));
           aValue.setSimpleValue (Genericode10Helper.createSimpleValue (sValue));
-          aRow.getValue ().add (aValue);
+          aRow.addValue (aValue);
         }
       }
-      aSimpleCodeList.getRow ().add (aRow);
+      aSimpleCodeList.addRow (aRow);
     }
     ret.setSimpleCodeList (aSimpleCodeList);
 
