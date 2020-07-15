@@ -46,8 +46,7 @@ public enum EGenericodeDocumentType implements IJAXBDocumentType
 
   private final JAXBDocumentType m_aDocType;
 
-  private EGenericodeDocumentType (@Nonnull final Class <?> aClass,
-                                   @Nonnull final List <? extends ClassPathResource> aXSDPaths)
+  private EGenericodeDocumentType (@Nonnull final Class <?> aClass, @Nonnull final List <? extends ClassPathResource> aXSDPaths)
   {
     m_aDocType = new JAXBDocumentType (aClass, aXSDPaths, x -> StringHelper.trimEnd (x, "Document"));
   }

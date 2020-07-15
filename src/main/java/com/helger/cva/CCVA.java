@@ -46,8 +46,8 @@ public final class CCVA
   @CodingStyleguideUnaware
   public static final List <ClassPathResource> CVA_10_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/ContextValueAssociation-1.0.xsd",
                                                                                                              _getCL ()),
-                                                                                      new ClassPathResource ("/schemas/xml.xsd",
-                                                                                                             _getCL ())).getAsUnmodifiable ();
+                                                                                      new ClassPathResource ("/schemas/xml.xsd", _getCL ()))
+                                                                                                                                            .getAsUnmodifiable ();
 
   @PresentForCodeCoverage
   private static final CCVA s_aInstance = new CCVA ();

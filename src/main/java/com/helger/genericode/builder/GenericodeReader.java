@@ -44,8 +44,7 @@ public class GenericodeReader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, Ge
   @Nonnull
   public static GenericodeReader <com.helger.genericode.v04.CodeListDocument> gc04CodeList ()
   {
-    return new GenericodeReader<> (EGenericodeDocumentType.GC04_CODE_LIST,
-                                   com.helger.genericode.v04.CodeListDocument.class);
+    return new GenericodeReader <> (EGenericodeDocumentType.GC04_CODE_LIST, com.helger.genericode.v04.CodeListDocument.class);
   }
 
   /**
@@ -56,8 +55,7 @@ public class GenericodeReader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, Ge
   @Nonnull
   public static GenericodeReader <com.helger.genericode.v04.CodeListSetDocument> gc04CodeListSet ()
   {
-    return new GenericodeReader<> (EGenericodeDocumentType.GC04_CODE_LIST_SET,
-                                   com.helger.genericode.v04.CodeListSetDocument.class);
+    return new GenericodeReader <> (EGenericodeDocumentType.GC04_CODE_LIST_SET, com.helger.genericode.v04.CodeListSetDocument.class);
   }
 
   /**
@@ -68,8 +66,7 @@ public class GenericodeReader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, Ge
   @Nonnull
   public static GenericodeReader <com.helger.genericode.v04.ColumnSetDocument> gc04ColumnSet ()
   {
-    return new GenericodeReader<> (EGenericodeDocumentType.GC04_COLUMN_SET,
-                                   com.helger.genericode.v04.ColumnSetDocument.class);
+    return new GenericodeReader <> (EGenericodeDocumentType.GC04_COLUMN_SET, com.helger.genericode.v04.ColumnSetDocument.class);
   }
 
   /**
@@ -80,8 +77,7 @@ public class GenericodeReader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, Ge
   @Nonnull
   public static GenericodeReader <com.helger.genericode.v10.CodeListDocument> gc10CodeList ()
   {
-    return new GenericodeReader<> (EGenericodeDocumentType.GC10_CODE_LIST,
-                                   com.helger.genericode.v10.CodeListDocument.class);
+    return new GenericodeReader <> (EGenericodeDocumentType.GC10_CODE_LIST, com.helger.genericode.v10.CodeListDocument.class);
   }
 
   /**
@@ -92,8 +88,7 @@ public class GenericodeReader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, Ge
   @Nonnull
   public static GenericodeReader <com.helger.genericode.v10.CodeListSetDocument> gc10CodeListSet ()
   {
-    return new GenericodeReader<> (EGenericodeDocumentType.GC10_CODE_LIST_SET,
-                                   com.helger.genericode.v10.CodeListSetDocument.class);
+    return new GenericodeReader <> (EGenericodeDocumentType.GC10_CODE_LIST_SET, com.helger.genericode.v10.CodeListSetDocument.class);
   }
 
   /**
@@ -104,7 +99,6 @@ public class GenericodeReader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, Ge
   @Nonnull
   public static GenericodeReader <com.helger.genericode.v10.ColumnSetDocument> gc10ColumnSet ()
   {
-    return new GenericodeReader<> (EGenericodeDocumentType.GC10_COLUMN_SET,
-                                   com.helger.genericode.v10.ColumnSetDocument.class);
+    return new GenericodeReader <> (EGenericodeDocumentType.GC10_COLUMN_SET, com.helger.genericode.v10.ColumnSetDocument.class);
   }
 }

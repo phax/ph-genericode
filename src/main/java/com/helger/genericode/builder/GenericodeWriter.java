@@ -51,7 +51,7 @@ public class GenericodeWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, Ge
   @Nonnull
   public static GenericodeWriter <com.helger.genericode.v04.CodeListDocument> gc04CodeList ()
   {
-    return new GenericodeWriter<> (EGenericodeDocumentType.GC04_CODE_LIST);
+    return new GenericodeWriter <> (EGenericodeDocumentType.GC04_CODE_LIST);
   }
 
   /**
@@ -62,7 +62,7 @@ public class GenericodeWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, Ge
   @Nonnull
   public static GenericodeWriter <com.helger.genericode.v04.CodeListSetDocument> gc04CodeListSet ()
   {
-    return new GenericodeWriter<> (EGenericodeDocumentType.GC04_CODE_LIST_SET);
+    return new GenericodeWriter <> (EGenericodeDocumentType.GC04_CODE_LIST_SET);
   }
 
   /**
@@ -73,7 +73,7 @@ public class GenericodeWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, Ge
   @Nonnull
   public static GenericodeWriter <com.helger.genericode.v04.ColumnSetDocument> gc04ColumnSet ()
   {
-    return new GenericodeWriter<> (EGenericodeDocumentType.GC04_COLUMN_SET);
+    return new GenericodeWriter <> (EGenericodeDocumentType.GC04_COLUMN_SET);
   }
 
   /**
@@ -84,7 +84,7 @@ public class GenericodeWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, Ge
   @Nonnull
   public static GenericodeWriter <com.helger.genericode.v10.CodeListDocument> gc10CodeList ()
   {
-    return new GenericodeWriter<> (EGenericodeDocumentType.GC10_CODE_LIST);
+    return new GenericodeWriter <> (EGenericodeDocumentType.GC10_CODE_LIST);
   }
 
   /**
@@ -95,7 +95,7 @@ public class GenericodeWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, Ge
   @Nonnull
   public static GenericodeWriter <com.helger.genericode.v10.CodeListSetDocument> gc10CodeListSet ()
   {
-    return new GenericodeWriter<> (EGenericodeDocumentType.GC10_CODE_LIST_SET);
+    return new GenericodeWriter <> (EGenericodeDocumentType.GC10_CODE_LIST_SET);
   }
 
   /**
@@ -106,6 +106,6 @@ public class GenericodeWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, Ge
   @Nonnull
   public static GenericodeWriter <com.helger.genericode.v10.ColumnSetDocument> gc10ColumnSet ()
   {
-    return new GenericodeWriter<> (EGenericodeDocumentType.GC10_COLUMN_SET);
+    return new GenericodeWriter <> (EGenericodeDocumentType.GC10_COLUMN_SET);
   }
 }

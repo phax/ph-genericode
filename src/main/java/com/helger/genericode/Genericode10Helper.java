@@ -82,10 +82,7 @@ public final class Genericode10Helper
       final Object aRef = aKeyColumnRef.getRef ();
       if (aRef instanceof Column)
         return ((Column) aRef).getId ();
-      throw new IllegalArgumentException ("Unsupported referenced object: " +
-                                          aRef +
-                                          " - " +
-                                          ClassHelper.getSafeClassName (aRef));
+      throw new IllegalArgumentException ("Unsupported referenced object: " + aRef + " - " + ClassHelper.getSafeClassName (aRef));
     }
     throw new IllegalArgumentException ("Illegal column element: " +
                                         aColumnElement +
@@ -130,7 +127,7 @@ public final class Genericode10Helper
   @ReturnsMutableCopy
   public static ICommonsList <Column> getAllColumns (@Nonnull final ColumnSet aColumnSet)
   {
-    final ICommonsList <Column> ret = new CommonsArrayList<> ();
+    final ICommonsList <Column> ret = new CommonsArrayList <> ();
     getAllColumns (aColumnSet, ret);
     return ret;
   }
@@ -161,7 +158,7 @@ public final class Genericode10Helper
   @ReturnsMutableCopy
   public static ICommonsList <String> getAllColumnIDs (@Nonnull final ColumnSet aColumnSet)
   {
-    final ICommonsList <String> ret = new CommonsArrayList<> ();
+    final ICommonsList <String> ret = new CommonsArrayList <> ();
     getAllColumnIDs (aColumnSet, ret);
     return ret;
   }
@@ -176,9 +173,7 @@ public final class Genericode10Helper
    */
   public static void getAllColumnIDs (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <String> aTarget)
   {
-    CollectionHelper.findAll (aColumnSet.getColumnChoice (),
-                              o -> o instanceof Column,
-                              o -> aTarget.add (((Column) o).getId ()));
+    CollectionHelper.findAll (aColumnSet.getColumnChoice (), o -> o instanceof Column, o -> aTarget.add (((Column) o).getId ()));
   }
 
   /**
@@ -212,7 +207,7 @@ public final class Genericode10Helper
   @ReturnsMutableCopy
   public static ICommonsList <Key> getAllKeys (@Nonnull final ColumnSet aColumnSet)
   {
-    final ICommonsList <Key> ret = new CommonsArrayList<> ();
+    final ICommonsList <Key> ret = new CommonsArrayList <> ();
     getAllKeys (aColumnSet, ret);
     return ret;
   }
@@ -242,7 +237,7 @@ public final class Genericode10Helper
   @ReturnsMutableCopy
   public static ICommonsList <String> getAllKeyIDs (@Nonnull final ColumnSet aColumnSet)
   {
-    final ICommonsList <String> ret = new CommonsArrayList<> ();
+    final ICommonsList <String> ret = new CommonsArrayList <> ();
     getAllKeyIDs (aColumnSet, ret);
     return ret;
   }

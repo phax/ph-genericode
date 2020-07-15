@@ -56,8 +56,7 @@ public final class ExcelSheetToCodeList10Test
     final Sheet aSheet = aWB.getSheetAt (0);
     assertNotNull (aSheet);
 
-    final ExcelReadOptions <UseType> aReadOptions = new ExcelReadOptions <UseType> ().setLinesToSkip (1)
-                                                                                     .setLineIndexShortName (0);
+    final ExcelReadOptions <UseType> aReadOptions = new ExcelReadOptions <UseType> ().setLinesToSkip (1).setLineIndexShortName (0);
     aReadOptions.addColumn (0, "id", UseType.REQUIRED, "string", true);
     aReadOptions.addColumn (1, "name", UseType.REQUIRED, "string", false);
     final CodeListDocument aCodeList = ExcelSheetToCodeList10.convertToSimpleCodeList (aSheet,

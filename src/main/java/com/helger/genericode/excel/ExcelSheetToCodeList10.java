@@ -78,10 +78,7 @@ public final class ExcelSheetToCodeList10
     // create annotation
     final Annotation aAnnotation = aFactory.createAnnotation ();
     final AnyOtherContent aContent = aFactory.createAnyOtherContent ();
-    aContent.addAny (new JAXBElement <> (QNAME_ANNOTATION,
-                                         String.class,
-                                         null,
-                                         "Automatically created by ph-genericode. Do NOT edit."));
+    aContent.addAny (new JAXBElement <> (QNAME_ANNOTATION, String.class, null, "Automatically created by ph-genericode. Do NOT edit."));
     aAnnotation.setAppInfo (aContent);
     ret.setAnnotation (aAnnotation);
 
@@ -108,9 +105,7 @@ public final class ExcelSheetToCodeList10
       // Read long name (optional)
       String sLongName = null;
       if (aReadOptions.getLineIndexLongName () >= 0)
-        sLongName = aExcelSheet.getRow (aReadOptions.getLineIndexLongName ())
-                               .getCell (aExcelColumn.getIndex ())
-                               .getStringCellValue ();
+        sLongName = aExcelSheet.getRow (aReadOptions.getLineIndexLongName ()).getCell (aExcelColumn.getIndex ()).getStringCellValue ();
 
       // Create Genericode column set
       final Column aColumn = Genericode10Helper.createColumn (aExcelColumn.getColumnID (),
@@ -125,10 +120,7 @@ public final class ExcelSheetToCodeList10
       if (aExcelColumn.isKeyColumn ())
       {
         // Create key definition
-        final Key aKey = Genericode10Helper.createKey (aExcelColumn.getColumnID () + "Key",
-                                                       sShortName,
-                                                       sLongName,
-                                                       aColumn);
+        final Key aKey = Genericode10Helper.createKey (aExcelColumn.getColumnID () + "Key", sShortName, sLongName, aColumn);
 
         // Add key
         aColumnSet.addKeyChoice (aKey);

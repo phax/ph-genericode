@@ -82,10 +82,7 @@ public final class Genericode04Helper
       final Object aRef = aKeyColumnRef.getRef ();
       if (aRef instanceof Column)
         return ((Column) aRef).getId ();
-      throw new IllegalArgumentException ("Unsupported referenced object: " +
-                                          aRef +
-                                          " - " +
-                                          ClassHelper.getSafeClassName (aRef));
+      throw new IllegalArgumentException ("Unsupported referenced object: " + aRef + " - " + ClassHelper.getSafeClassName (aRef));
     }
     throw new IllegalArgumentException ("Illegal column element: " +
                                         aColumnElement +
@@ -175,9 +172,7 @@ public final class Genericode04Helper
    */
   public static void getAllColumnIDs (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <String> aTarget)
   {
-    CollectionHelper.findAll (aColumnSet.getColumnChoice (),
-                              o -> o instanceof Column,
-                              o -> aTarget.add (((Column) o).getId ()));
+    CollectionHelper.findAll (aColumnSet.getColumnChoice (), o -> o instanceof Column, o -> aTarget.add (((Column) o).getId ()));
   }
 
   /**

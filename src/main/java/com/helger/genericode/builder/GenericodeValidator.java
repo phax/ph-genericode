@@ -44,7 +44,7 @@ public class GenericodeValidator <JAXBTYPE> extends JAXBValidationBuilder <JAXBT
   @Nonnull
   public static GenericodeValidator <com.helger.genericode.v04.CodeListDocument> gc04CodeList ()
   {
-    return new GenericodeValidator<> (EGenericodeDocumentType.GC04_CODE_LIST);
+    return new GenericodeValidator <> (EGenericodeDocumentType.GC04_CODE_LIST);
   }
 
   /**
@@ -56,7 +56,7 @@ public class GenericodeValidator <JAXBTYPE> extends JAXBValidationBuilder <JAXBT
   @Nonnull
   public static GenericodeValidator <com.helger.genericode.v04.CodeListSetDocument> gc04CodeListSet ()
   {
-    return new GenericodeValidator<> (EGenericodeDocumentType.GC04_CODE_LIST_SET);
+    return new GenericodeValidator <> (EGenericodeDocumentType.GC04_CODE_LIST_SET);
   }
 
   /**
@@ -67,7 +67,7 @@ public class GenericodeValidator <JAXBTYPE> extends JAXBValidationBuilder <JAXBT
   @Nonnull
   public static GenericodeValidator <com.helger.genericode.v04.ColumnSetDocument> gc04ColumnSet ()
   {
-    return new GenericodeValidator<> (EGenericodeDocumentType.GC04_COLUMN_SET);
+    return new GenericodeValidator <> (EGenericodeDocumentType.GC04_COLUMN_SET);
   }
 
   /**
@@ -78,7 +78,7 @@ public class GenericodeValidator <JAXBTYPE> extends JAXBValidationBuilder <JAXBT
   @Nonnull
   public static GenericodeValidator <com.helger.genericode.v10.CodeListDocument> gc10CodeList ()
   {
-    return new GenericodeValidator<> (EGenericodeDocumentType.GC10_CODE_LIST);
+    return new GenericodeValidator <> (EGenericodeDocumentType.GC10_CODE_LIST);
   }
 
   /**
@@ -90,7 +90,7 @@ public class GenericodeValidator <JAXBTYPE> extends JAXBValidationBuilder <JAXBT
   @Nonnull
   public static GenericodeValidator <com.helger.genericode.v10.CodeListSetDocument> gc10CodeListSet ()
   {
-    return new GenericodeValidator<> (EGenericodeDocumentType.GC10_CODE_LIST_SET);
+    return new GenericodeValidator <> (EGenericodeDocumentType.GC10_CODE_LIST_SET);
   }
 
   /**
@@ -101,6 +101,6 @@ public class GenericodeValidator <JAXBTYPE> extends JAXBValidationBuilder <JAXBT
   @Nonnull
   public static GenericodeValidator <com.helger.genericode.v10.ColumnSetDocument> gc10ColumnSet ()
   {
-    return new GenericodeValidator<> (EGenericodeDocumentType.GC10_COLUMN_SET);
+    return new GenericodeValidator <> (EGenericodeDocumentType.GC10_COLUMN_SET);
   }
 }
