@@ -5,28 +5,6 @@
 Java library for reading and writing OASIS GeneriCode and CVA files.
 It supports GeneriCode 0.4 and GeneriCode 1.0 as well as CVA 1.0.
 
-# News and noteworthy
-
-* v6.1.0 - 2018-11-22
-    * Added namespace URI constants in the Cxxx files.
-    * Updated to ph-commons 9.2.0
-* v6.0.0 - 2017-11-07
-    * Updated to ph-commons 9.0.0
-* v5.0.1 - 2017-01-20
-    * Added new package `com.helger.genericode.builder` with more flexible reader/writer/validator
-    * Binds to ph-commons 8.6.x
-* v5.0.0 - 2016-06-11
-    * Requires JDK 8
-    * Binds to ph-commons 8.x
-* v4.1.1 - 2015-07-21
-    * Last version with JDK 6 support
-* v4.1.0 - 2015-07-21   
-* v4.0.0 - 2015-07-09
-    * Binds to ph-commons 6.x
-* v3.3.1 - 2015-03-12
-    * Binds to ph-commons 5.x
-* v3.3.0 - 2014-08-25
-
 # Usage with Maven
 
 ```xml
@@ -51,6 +29,30 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
 [Example code for reading GeneriCode v1.0 CodeList files](https://github.com/phax/ph-genericode/blob/master/src/test/java/com/helger/genericode/Genericode10CodeListMarshallerTest.java) is available.
 
 [Example code for reading CVA files](https://github.com/phax/ph-genericode/blob/master/src/test/java/com/helger/cva/CVA10MarshallerTest.java) is available.
+
+# News and noteworthy
+
+* v6.1.1 - 2020-09-17
+    * Updated to Jakarta JAXB 2.3.3
+* v6.1.0 - 2018-11-22
+    * Added namespace URI constants in the Cxxx files.
+    * Updated to ph-commons 9.2.0
+* v6.0.0 - 2017-11-07
+    * Updated to ph-commons 9.0.0
+* v5.0.1 - 2017-01-20
+    * Added new package `com.helger.genericode.builder` with more flexible reader/writer/validator
+    * Binds to ph-commons 8.6.x
+* v5.0.0 - 2016-06-11
+    * Requires JDK 8
+    * Binds to ph-commons 8.x
+* v4.1.1 - 2015-07-21
+    * Last version with JDK 6 support
+* v4.1.0 - 2015-07-21   
+* v4.0.0 - 2015-07-09
+    * Binds to ph-commons 6.x
+* v3.3.1 - 2015-03-12
+    * Binds to ph-commons 5.x
+* v3.3.0 - 2014-08-25
 
 ---
 
