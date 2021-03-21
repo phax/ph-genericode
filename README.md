@@ -32,7 +32,7 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
 
 # News and noteworthy
 
-* v6.1.2 - work in progress
+* v6.2.0 - 2021-03-21
     * Updated to ph-commons 10
 * v6.1.1 - 2020-09-17
     * Updated to Jakarta JAXB 2.3.3
