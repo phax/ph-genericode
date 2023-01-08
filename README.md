@@ -11,7 +11,7 @@ It supports GeneriCode 0.4 and GeneriCode 1.0 as well as CVA 1.0.
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-genericode</artifactId>
-  <version>6.1.0</version>
+  <version>x.y.z</version>
 </dependency>
 ```
 
@@ -32,6 +32,10 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
 
 # News and noteworthy
 
+* v7.0.0 - 2023-01-08
+    * Using Java 11 as the baseline
+    * Updated to ph-commons 11
+    * Using JAXB 4.0 as the baseline
 * v6.3.0 - 2021-05-02
     * Updated to ph-commons 10.1
 * v6.2.0 - 2021-03-21
