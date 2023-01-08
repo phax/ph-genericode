@@ -21,7 +21,6 @@ import java.net.URI;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
-import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
 
 import org.apache.poi.ss.usermodel.Sheet;
@@ -43,6 +42,8 @@ import com.helger.genericode.v04.SimpleCodeList;
 import com.helger.genericode.v04.UseType;
 import com.helger.genericode.v04.Value;
 import com.helger.poi.excel.ExcelReadHelper;
+
+import jakarta.xml.bind.JAXBElement;
 
 /**
  * A utility class to convert a simple Excel sheet into a code list v0.4
