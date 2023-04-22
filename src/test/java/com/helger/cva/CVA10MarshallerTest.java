@@ -60,7 +60,7 @@ public final class CVA10MarshallerTest
   @Test
   public void testReadValid ()
   {
-    for (final File aFile : new FileSystemIterator ("src/test/resources/examples/cva/v10"))
+    for (final File aFile : new FileSystemIterator ("src/test/resources/external/examples/cva/v10"))
       if (aFile.isFile ())
         _testReadAndWriteValid (new FileSystemResource (aFile));
   }

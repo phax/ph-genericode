@@ -69,7 +69,7 @@ public final class Genericode04CodeListMarshallerTest
   @Test
   public void testReadValid ()
   {
-    for (final File aFile : new FileSystemIterator ("src/test/resources/examples/gc/v04"))
+    for (final File aFile : new FileSystemIterator ("src/test/resources/external/examples/gc/v04"))
       if (aFile.isFile ())
         _testReadAndWriteValid (new FileSystemResource (aFile));
   }

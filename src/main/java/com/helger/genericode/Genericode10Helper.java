@@ -38,7 +38,6 @@ import com.helger.genericode.v10.Data;
 import com.helger.genericode.v10.Key;
 import com.helger.genericode.v10.KeyColumnRef;
 import com.helger.genericode.v10.LongName;
-import com.helger.genericode.v10.ObjectFactory;
 import com.helger.genericode.v10.Row;
 import com.helger.genericode.v10.ShortName;
 import com.helger.genericode.v10.SimpleValue;
@@ -53,8 +52,6 @@ import com.helger.genericode.v10.Value;
 @Immutable
 public final class Genericode10Helper
 {
-  private static final ObjectFactory s_aFactory = new ObjectFactory ();
-
   private Genericode10Helper ()
   {}
 
@@ -82,7 +79,10 @@ public final class Genericode10Helper
       final Object aRef = aKeyColumnRef.getRef ();
       if (aRef instanceof Column)
         return ((Column) aRef).getId ();
-      throw new IllegalArgumentException ("Unsupported referenced object: " + aRef + " - " + ClassHelper.getSafeClassName (aRef));
+      throw new IllegalArgumentException ("Unsupported referenced object: " +
+                                          aRef +
+                                          " - " +
+                                          ClassHelper.getSafeClassName (aRef));
     }
     throw new IllegalArgumentException ("Illegal column element: " +
                                         aColumnElement +
@@ -173,7 +173,9 @@ public final class Genericode10Helper
    */
   public static void getAllColumnIDs (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <String> aTarget)
   {
-    CollectionHelper.findAll (aColumnSet.getColumnChoice (), o -> o instanceof Column, o -> aTarget.add (((Column) o).getId ()));
+    CollectionHelper.findAll (aColumnSet.getColumnChoice (),
+                              o -> o instanceof Column,
+                              o -> aTarget.add (((Column) o).getId ()));
   }
 
   /**
@@ -304,7 +306,7 @@ public final class Genericode10Helper
   @Nonnull
   public static ShortName createShortName (@Nullable final String sValue)
   {
-    final ShortName aShortName = s_aFactory.createShortName ();
+    final ShortName aShortName = new ShortName ();
     aShortName.setValue (sValue);
     return aShortName;
   }
@@ -319,7 +321,7 @@ public final class Genericode10Helper
   @Nonnull
   public static LongName createLongName (@Nullable final String sValue)
   {
-    final LongName aLongName = s_aFactory.createLongName ();
+    final LongName aLongName = new LongName ();
     aLongName.setValue (sValue);
     return aLongName;
   }
@@ -334,7 +336,7 @@ public final class Genericode10Helper
   @Nonnull
   public static SimpleValue createSimpleValue (@Nullable final String sValue)
   {
-    final SimpleValue aSimpleValue = s_aFactory.createSimpleValue ();
+    final SimpleValue aSimpleValue = new SimpleValue ();
     aSimpleValue.setValue (sValue);
     return aSimpleValue;
   }
@@ -349,7 +351,7 @@ public final class Genericode10Helper
   @Nonnull
   public static KeyColumnRef createKeyColumnRef (@Nullable final Column aColumn)
   {
-    final KeyColumnRef aColumnRef = s_aFactory.createKeyColumnRef ();
+    final KeyColumnRef aColumnRef = new KeyColumnRef ();
     // Important: reference the object itself and not just the ID!!!
     aColumnRef.setRef (aColumn);
     return aColumnRef;
@@ -382,13 +384,13 @@ public final class Genericode10Helper
     ValueEnforcer.notEmpty (sShortName, "ShortName");
     ValueEnforcer.notEmpty (sDataType, "DataType");
 
-    final Column aColumn = s_aFactory.createColumn ();
+    final Column aColumn = new Column ();
     aColumn.setId (sColumnID);
     aColumn.setUse (eUseType);
     aColumn.setShortName (createShortName (sShortName));
     if (StringHelper.hasText (sLongName))
       aColumn.getLongName ().add (createLongName (sLongName));
-    final Data aData = s_aFactory.createData ();
+    final Data aData = new Data ();
     aData.setType (sDataType);
     aColumn.setData (aData);
     return aColumn;
@@ -417,7 +419,7 @@ public final class Genericode10Helper
     ValueEnforcer.notEmpty (sShortName, "ShortName");
     ValueEnforcer.notNull (aColumn, "Column");
 
-    final Key aKey = s_aFactory.createKey ();
+    final Key aKey = new Key ();
     aKey.setId (sColumnID);
     aKey.setShortName (createShortName (sShortName));
     if (StringHelper.hasText (sLongName))

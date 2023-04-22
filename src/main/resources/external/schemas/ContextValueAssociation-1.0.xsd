@@ -35,8 +35,7 @@ A PARTICULAR PURPOSE.
 
 <!-- xml:id per http://www.w3.org/TR/2005/REC-xml-id-20050909/ -->
 <!-- xml:base per http://www.w3.org/TR/2009/REC-xmlbase-20090128/ -->
-<xsd:import schemaLocation="xml.xsd" 
-	    namespace="http://www.w3.org/XML/1998/namespace"/>
+<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
 
 <xsd:annotation>
  <xsd:documentation xml:lang="en">

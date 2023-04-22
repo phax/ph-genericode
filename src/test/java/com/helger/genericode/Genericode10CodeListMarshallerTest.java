@@ -70,7 +70,7 @@ public final class Genericode10CodeListMarshallerTest
   @Test
   public void testReadValid ()
   {
-    for (final File aFile : new FileSystemIterator ("src/test/resources/examples/gc/v10").withFilter (IFileFilter.filenameEndsWith (".gc")))
+    for (final File aFile : new FileSystemIterator ("src/test/resources/external/examples/gc/v10").withFilter (IFileFilter.filenameEndsWith (".gc")))
       _testReadAndWriteValid (new FileSystemResource (aFile));
   }
 }

@@ -30,6 +30,7 @@ import com.helger.xml.namespace.MapBasedNamespaceContext;
  *        The Genericode implementation class to be read
  */
 @NotThreadSafe
+@Deprecated (since = "7.1.0", forRemoval = true)
 public class GenericodeWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, GenericodeWriter <JAXBTYPE>>
 {
   public GenericodeWriter (@Nonnull final EGenericodeDocumentType eDocType)

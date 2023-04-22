@@ -32,6 +32,10 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
 
 # News and noteworthy
 
+* v7.1.0 - work in progress
+    * Moved the XML Schema to folder `external/...`
+    * Deprecated classes `Genericode(Reader|Validator|Writer)` in favour of the explicit marshallers
+    * Using the `xml.xsd` from `ph-xsds-xml` instead of a local one
 * v7.0.0 - 2023-01-08
     * Using Java 11 as the baseline
     * Updated to ph-commons 11

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     xmlns:gc="http://genericode.org/2006/ns/CodeList/0.4/" targetNamespace="http://genericode.org/2006/ns/CodeList/0.4/">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:complexType name="AnyOtherContent">
         <xsd:annotation>
             <xsd:documentation>Container for any XML content which is in a different namespace to the Schema's target namespace.</xsd:documentation>

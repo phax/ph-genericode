@@ -35,6 +35,7 @@ import com.helger.jaxb.builder.JAXBDocumentType;
  *
  * @author Philip Helger
  */
+@Deprecated (since = "7.1.0", forRemoval = true)
 public enum EGenericodeDocumentType implements IJAXBDocumentType
 {
   GC04_CODE_LIST (com.helger.genericode.v04.CodeListDocument.class, CGenericode.GENERICODE_04_XSDS),
@@ -46,7 +47,7 @@ public enum EGenericodeDocumentType implements IJAXBDocumentType
 
   private final JAXBDocumentType m_aDocType;
 
-  private EGenericodeDocumentType (@Nonnull final Class <?> aClass, @Nonnull final List <? extends ClassPathResource> aXSDPaths)
+  EGenericodeDocumentType (@Nonnull final Class <?> aClass, @Nonnull final List <? extends ClassPathResource> aXSDPaths)
   {
     m_aDocType = new JAXBDocumentType (aClass, aXSDPaths, x -> StringHelper.trimEnd (x, "Document"));
   }

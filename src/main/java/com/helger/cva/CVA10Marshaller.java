@@ -33,6 +33,6 @@ public class CVA10Marshaller extends GenericJAXBMarshaller <ContextValueAssociat
    */
   public CVA10Marshaller ()
   {
-    super (ContextValueAssociation.class, CCVA.CVA_10_XSDS, o -> new ObjectFactory ().createContextValueAssociation (o));
+    super (ContextValueAssociation.class, CCVA.CVA_10_XSDS, new ObjectFactory ()::createContextValueAssociation);
   }
 }

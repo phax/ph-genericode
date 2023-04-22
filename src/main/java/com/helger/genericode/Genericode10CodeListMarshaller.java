@@ -33,6 +33,6 @@ public class Genericode10CodeListMarshaller extends GenericJAXBMarshaller <CodeL
    */
   public Genericode10CodeListMarshaller ()
   {
-    super (CodeListDocument.class, CGenericode.GENERICODE_10_XSDS, o -> new ObjectFactory ().createCodeList (o));
+    super (CodeListDocument.class, CGenericode.GENERICODE_10_XSDS, new ObjectFactory ()::createCodeList);
   }
 }

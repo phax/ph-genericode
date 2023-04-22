@@ -28,17 +28,17 @@
     <xjc:javaType name="com.helger.commons.datetime.XMLOffsetDate"     xmlType="xsd:date"     adapter="com.helger.jaxb.adapter.AdapterXMLOffsetDate" />
     <xjc:javaType name="com.helger.commons.datetime.XMLOffsetTime"     xmlType="xsd:time"     adapter="com.helger.jaxb.adapter.AdapterXMLOffsetTime" />
   </globalBindings>
-  <bindings schemaLocation="../resources/schemas/genericode-code-list-0.4.xsd">
+  <bindings schemaLocation="../resources/external/schemas/genericode-code-list-0.4.xsd">
     <schemaBindings>
       <package name="com.helger.genericode.v04" />
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/genericode-1.0.xsd">
+  <bindings schemaLocation="../resources/external/schemas/genericode-1.0.xsd">
     <schemaBindings>
       <package name="com.helger.genericode.v10" />
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ContextValueAssociation-1.0.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ContextValueAssociation-1.0.xsd">
     <schemaBindings>
       <package name="com.helger.cva.v10" />
     </schemaBindings>

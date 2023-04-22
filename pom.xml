@@ -25,7 +25,7 @@
     <version>2.0.3</version>
   </parent>
   <artifactId>ph-genericode</artifactId>
-  <version>7.0.1-SNAPSHOT</version>
+  <version>7.1.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>ph-genericode</name>
   <description>Library to read and write OASIS GeneriCode and CVA documents</description>
@@ -77,6 +77,13 @@
         <scope>import</scope>
       </dependency>
       <dependency>
+        <groupId>com.helger.xsd</groupId>
+        <artifactId>ph-xsds-parent-pom</artifactId>
+        <version>3.0.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>com.helger</groupId>
         <artifactId>ph-poi</artifactId>
         <version>6.0.0</version>
@@ -101,6 +108,10 @@
     <dependency>
       <groupId>com.helger.commons</groupId>
       <artifactId>ph-jaxb</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.helger.xsd</groupId>
+      <artifactId>ph-xsds-xml</artifactId>
     </dependency>
 
     <dependency>
@@ -142,20 +153,6 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>com.mycila</groupId>
-        <artifactId>license-maven-plugin</artifactId>
-        <configuration>
-          <excludes>
-            <exclude>src/main/resources/schemas/**</exclude>
-            <exclude>src/test/resources/examples/**</exclude>
-            <exclude>docs/**</exclude>
-            <exclude>**/*.txt</exclude>
-            <exclude>**/LICENSE</exclude>
-            <exclude>**/NOTICE</exclude>
-          </excludes>
-        </configuration>
-      </plugin>
-      <plugin>
         <groupId>${jaxb-plugin.group}</groupId>
         <artifactId>${jaxb-plugin.artifact}</artifactId>
         <version>${jaxb-plugin.version}</version>
@@ -168,8 +165,10 @@
         </executions>
         <configuration>
           <bindingDirectory>${basedir}/src/main/jaxb</bindingDirectory>
-          <schemaDirectory>${basedir}/src/main/resources/schemas</schemaDirectory>
+          <schemaDirectory>${basedir}/src/main/resources/external/schemas</schemaDirectory>
           <extension>true</extension>
+          <strict>false</strict>
+          <catalog>${basedir}/src/main/jaxb/catalog.txt</catalog>
           <args>
             <arg>-no-header</arg>
             <arg>-Xph-default-locale</arg>

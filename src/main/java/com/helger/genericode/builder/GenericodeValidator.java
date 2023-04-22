@@ -29,6 +29,7 @@ import com.helger.jaxb.builder.JAXBValidationBuilder;
  *        The Genericode implementation class to be read
  */
 @NotThreadSafe
+@Deprecated (since = "7.1.0", forRemoval = true)
 public class GenericodeValidator <JAXBTYPE> extends JAXBValidationBuilder <JAXBTYPE, GenericodeValidator <JAXBTYPE>>
 {
   public GenericodeValidator (@Nonnull final EGenericodeDocumentType eDocType)

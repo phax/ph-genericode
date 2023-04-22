@@ -33,6 +33,6 @@ public class Genericode10ColumnSetMarshaller extends GenericJAXBMarshaller <Colu
    */
   public Genericode10ColumnSetMarshaller ()
   {
-    super (ColumnSetDocument.class, CGenericode.GENERICODE_10_XSDS, o -> new ObjectFactory ().createColumnSet (o));
+    super (ColumnSetDocument.class, CGenericode.GENERICODE_10_XSDS, new ObjectFactory ()::createColumnSet);
   }
 }

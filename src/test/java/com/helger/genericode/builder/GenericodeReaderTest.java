@@ -38,6 +38,7 @@ import com.helger.xml.serialize.read.DOMReader;
  *
  * @author Philip Helger
  */
+@Deprecated (since = "7.1.0", forRemoval = true)
 public final class GenericodeReaderTest
 {
   private static void _testReadAndWrite04 (final IReadableResource aRes)
@@ -67,7 +68,7 @@ public final class GenericodeReaderTest
   @Test
   public void testReadWrite04 ()
   {
-    for (final File aFile : new FileSystemIterator ("src/test/resources/examples/gc/v04"))
+    for (final File aFile : new FileSystemIterator ("src/test/resources/external/examples/gc/v04"))
       if (aFile.isFile ())
         _testReadAndWrite04 (new FileSystemResource (aFile));
   }
@@ -99,7 +100,7 @@ public final class GenericodeReaderTest
   @Test
   public void testReadWrite10 ()
   {
-    for (final File aFile : new FileSystemIterator ("src/test/resources/examples/gc/v10").withFilter (IFileFilter.filenameEndsWith (".gc")))
+    for (final File aFile : new FileSystemIterator ("src/test/resources/external/examples/gc/v10").withFilter (IFileFilter.filenameEndsWith (".gc")))
       if (aFile.isFile ())
         _testReadAndWrite10 (new FileSystemResource (aFile));
   }
