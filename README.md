@@ -35,7 +35,8 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
 # News and noteworthy
 
 * v7.1.2 - work in progress
-    * Switched JAXB Maven plugin to `org.jvnet.jaxb:jaxb-maven-plugin` 
+    * Switched JAXB Maven plugin to `org.jvnet.jaxb:jaxb-maven-plugin`
+    * Updated to ph-poi 6.0.2 for Java 21 compatibility 
 * v7.1.1 - 2023-07-31
     * Updated to ph-commons 11.1
 * v7.1.0 - 2023-04-22
