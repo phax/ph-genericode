@@ -21,6 +21,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Comparator;
 import java.util.List;
 
@@ -55,18 +56,11 @@ public final class Genericode10EN16931CodeListMarshallerTest
       // Read XML
       final Document aDoc = DOMReader.readXMLDOM (aRes);
       assertNotNull (aRes.getPath(), aDoc);
-
       final Genericode10CodeListMarshaller aMarshaller = new Genericode10CodeListMarshaller ();
-
-      final MapBasedNamespaceContext aNSContext = new MapBasedNamespaceContext ();
-      aNSContext.addMapping ("gc", "http://docs.oasis-open.org/codelist/ns/genericode/1.0/");
-      aNSContext.addDefaultNamespaceURI ("");
-      aMarshaller.setNamespaceContext(aNSContext);
 
       // Read code list
       final CodeListDocument aCLDoc = aMarshaller.read (aDoc);
       assertNotNull (aRes.getPath(), aCLDoc);
-
       SimpleCodeList simpleCodeList = aCLDoc.getSimpleCodeList();
       /**
        <Row>
@@ -82,33 +76,29 @@ public final class Genericode10EN16931CodeListMarshallerTest
       rows.sort(new Comparator<Row>() {
         @Override
         public int compare(Row lhs, Row rhs){
-          // get the <Value ColumnRef="Code">
-          Object lhsColumnRef =  lhs.getValue().get(0).getColumnRef(); // lhs.getValues() would be more mnemonic
-          String lhsCode = null;
-          System.err.println("lhsColumnRef is not 'Code' nor 'Name' it is '" + lhsColumnRef.toString() + "'");
-          if(lhsColumnRef.toString().equals("Code")){
-            lhsCode = lhs.getValue().get(0).getSimpleValueValue();
-          }else{
-            lhsCode = lhs.getValue().get(1).getSimpleValueValue();
+          // get SOME_CODE the content of  <Value ColumnRef="Code"><SimpleValue>SOME_CODE</SimpleValue>
+          String lhsCode = Genericode10Helper.getRowValue (lhs, "Code");
+          String rhsCode = Genericode10Helper.getRowValue (rhs, "Code");
+          try{
+              // parseInt("Kona", 10) throws a NumberFormatException
+              // parseInt("Kona", 27) returns 411787
+              // using Character.MAX_RADIX == 36
+              return Integer.valueOf(Integer.parseInt(lhsCode, 36)).compareTo(Integer.valueOf(Integer.parseInt(rhsCode, 36)));
+          }catch(NumberFormatException e){
+              return lhsCode.compareTo(rhsCode);
           }
-
-          // get the <Value ColumnRef="Code">
-          Object rhsColumnRef =  rhs.getValue().get(0).getColumnRef(); // rhs.getValues() would be more mnemonic
-          String rhsCode = null;
-          if(lhsColumnRef.toString().equals("Code")){
-            rhsCode = rhs.getValue().get(0).getSimpleValueValue();
-          }else{
-            rhsCode = rhs.getValue().get(1).getSimpleValueValue();
-          }
-          // -1 - less than, 1 - greater than, 0 - equal, all inversed for descending
-          // to be tested if correct or opposite order..
-          return rhsCode.compareTo(lhsCode);
         }
       });
 
       // Write again
+      final MapBasedNamespaceContext aNSContext = new MapBasedNamespaceContext ();
+      aNSContext.addMapping ("gc", CGenericode.GENERICODE_10_NAMESPACE_URI);
+      aNSContext.addDefaultNamespaceURI ("");
+      aMarshaller.setNamespaceContext(aNSContext);
       aMarshaller.setFormattedOutput(true);
-      aMarshaller.write(aCLDoc, Path.of(aRes.getPath()));
+      String fileName = aRes.getPath().substring(aRes.getPath().lastIndexOf(File.separatorChar), aRes.getPath().length());
+      aMarshaller.write(aCLDoc, Paths.get("target" + File.separator + "generated-test-sources" + File.separator + fileName));
+
       final Document aDoc2 = aMarshaller.getAsDocument (aCLDoc);
       assertNotNull (aRes.getPath(), aDoc2);
 
@@ -122,7 +112,7 @@ public final class Genericode10EN16931CodeListMarshallerTest
   @Test
   public void testReadValid ()
   {
-    for (final File aFile : new FileSystemIterator ("src/test/resources/external/examples/gc/v10").withFilter (IFileFilter.filenameEndsWith (".gc")))
+    for (final File aFile : new FileSystemIterator ("src/test/resources/external/examples/gc/v10/11_2023-05-15").withFilter (IFileFilter.filenameEndsWith (".gc")))
       _testReadAndWriteValid (new FileSystemResource (aFile));
   }
 }
