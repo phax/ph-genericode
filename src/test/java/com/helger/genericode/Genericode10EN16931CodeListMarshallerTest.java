@@ -20,93 +20,97 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Comparator;
 import java.util.List;
 
 import javax.annotation.Nonnull;
 
-import com.helger.genericode.v10.Row;
-import com.helger.genericode.v10.SimpleCodeList;
-import com.helger.xml.namespace.MapBasedNamespaceContext;
 import org.junit.Test;
 import org.w3c.dom.Document;
 
+import com.helger.commons.compare.CompareHelper;
 import com.helger.commons.io.file.FileSystemIterator;
+import com.helger.commons.io.file.FilenameHelper;
 import com.helger.commons.io.file.IFileFilter;
 import com.helger.commons.io.resource.FileSystemResource;
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.mock.CommonsTestHelper;
 import com.helger.genericode.v10.CodeListDocument;
+import com.helger.genericode.v10.Row;
+import com.helger.genericode.v10.SimpleCodeList;
+import com.helger.xml.namespace.MapBasedNamespaceContext;
 import com.helger.xml.serialize.read.DOMReader;
 
 /**
  * Test class for class {@link Genericode10CodeListMarshaller}.
  *
+ * @author Svante Schubert
  * @author Philip Helger
  */
 public final class Genericode10EN16931CodeListMarshallerTest
 {
   private static void _testReadAndWriteValid (@Nonnull final IReadableResource aRes)
   {
-      // Resolve resource
-      assertTrue (aRes.exists ());
+    // Resolve resource
+    assertTrue (aRes.getPath (), aRes.exists ());
 
-      // Read XML
-      final Document aDoc = DOMReader.readXMLDOM (aRes);
-      assertNotNull (aRes.getPath(), aDoc);
-      final Genericode10CodeListMarshaller aMarshaller = new Genericode10CodeListMarshaller ();
+    // Read XML
+    final Document aDoc = DOMReader.readXMLDOM (aRes);
+    assertNotNull (aRes.getPath (), aDoc);
+    final Genericode10CodeListMarshaller aMarshaller = new Genericode10CodeListMarshaller ();
 
-      // Read code list
-      final CodeListDocument aCLDoc = aMarshaller.read (aDoc);
-      assertNotNull (aRes.getPath(), aCLDoc);
-      SimpleCodeList simpleCodeList = aCLDoc.getSimpleCodeList();
-      /**
-       <Row>
-       <Value ColumnRef="Code">
-       <SimpleValue>AFN</SimpleValue>
-       </Value>
-       <Value ColumnRef="Name">
-       <SimpleValue>Afghani</SimpleValue>
-       </Value>
-       </Row>
-       */
-      List<Row> rows = simpleCodeList.getRow();
-      rows.sort(new Comparator<Row>() {
-        @Override
-        public int compare(Row lhs, Row rhs){
-          // get SOME_CODE the content of  <Value ColumnRef="Code"><SimpleValue>SOME_CODE</SimpleValue>
-          String lhsCode = Genericode10Helper.getRowValue (lhs, "Code");
-          String rhsCode = Genericode10Helper.getRowValue (rhs, "Code");
-          try{
-              // parseInt("Kona", 10) throws a NumberFormatException
-              // parseInt("Kona", 27) returns 411787
-              // using Character.MAX_RADIX == 36
-              return Integer.valueOf(Integer.parseInt(lhsCode, 36)).compareTo(Integer.valueOf(Integer.parseInt(rhsCode, 36)));
-          }catch(NumberFormatException e){
-              return lhsCode.compareTo(rhsCode);
-          }
-        }
-      });
+    // Read code list
+    final CodeListDocument aCLDoc = aMarshaller.read (aDoc);
+    assertNotNull (aRes.getPath (), aCLDoc);
 
-      // Write again
-      final MapBasedNamespaceContext aNSContext = new MapBasedNamespaceContext ();
-      aNSContext.addMapping ("gc", CGenericode.GENERICODE_10_NAMESPACE_URI);
-      aNSContext.addDefaultNamespaceURI ("");
-      aMarshaller.setNamespaceContext(aNSContext);
-      aMarshaller.setFormattedOutput(true);
-      String fileName = aRes.getPath().substring(aRes.getPath().lastIndexOf(File.separatorChar), aRes.getPath().length());
-      aMarshaller.write(aCLDoc, Paths.get("target" + File.separator + "generated-test-sources" + File.separator + fileName));
+    final SimpleCodeList aSimpleCodeList = aCLDoc.getSimpleCodeList ();
+    assertNotNull (aSimpleCodeList);
 
-      final Document aDoc2 = aMarshaller.getAsDocument (aCLDoc);
-      assertNotNull (aRes.getPath(), aDoc2);
+    /**
+     * <Row> <Value ColumnRef="Code"> <SimpleValue>AFN</SimpleValue> </Value>
+     * <Value ColumnRef="Name"> <SimpleValue>Afghani</SimpleValue> </Value>
+     * </Row>
+     */
+    final List <Row> rows = aSimpleCodeList.getRow ();
+    rows.sort ( (lhs, rhs) -> {
+      // get SOME_CODE the content of <Value
+      // ColumnRef="Code"><SimpleValue>SOME_CODE</SimpleValue>
+      final String lhsCode = Genericode10Helper.getRowValue (lhs, "Code");
+      final String rhsCode = Genericode10Helper.getRowValue (rhs, "Code");
+      try
+      {
+        // parseInt("Kona", 10) throws a NumberFormatException
+        // parseInt("Kona", 27) returns 411787
+        // using Character.MAX_RADIX == 36
+        final int lhsNum = Integer.parseInt (lhsCode, Character.MAX_RADIX);
+        final int rhsNum = Integer.parseInt (rhsCode, Character.MAX_RADIX);
+        return CompareHelper.compare (lhsNum, rhsNum);
+      }
+      catch (final NumberFormatException e)
+      {
+        return CompareHelper.compare (lhsCode, rhsCode);
+      }
+    });
 
-      // Read code list again
-      final CodeListDocument aCLDoc2 = aMarshaller.read (aDoc2);
-      assertNotNull (aRes.getPath(), aCLDoc2);
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCLDoc, aCLDoc2);
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCLDoc, aCLDoc.clone ());
+    // Write again
+    final MapBasedNamespaceContext aNSContext = new MapBasedNamespaceContext ();
+    aNSContext.addMapping ("gc", CGenericode.GENERICODE_10_NAMESPACE_URI);
+    aNSContext.addDefaultNamespaceURI ("");
+    aMarshaller.setNamespaceContext (aNSContext);
+
+    aMarshaller.setFormattedOutput (true);
+
+    final String sFileName = FilenameHelper.getWithoutPath (aRes.getPath ());
+    final var eSuccess = aMarshaller.write (aCLDoc, new File ("generated/codelists/sorted/" + sFileName));
+    assertTrue (eSuccess.isSuccess ());
+
+    final Document aDoc2 = aMarshaller.getAsDocument (aCLDoc);
+    assertNotNull (aRes.getPath (), aDoc2);
+
+    // Read code list again
+    final CodeListDocument aCLDoc2 = aMarshaller.read (aDoc2);
+    assertNotNull (aRes.getPath (), aCLDoc2);
+    CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCLDoc, aCLDoc2);
+    CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCLDoc, aCLDoc.clone ());
   }
 
   @Test
