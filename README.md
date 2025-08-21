@@ -34,44 +34,64 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
 
 # News and noteworthy
 
-* v7.1.2 - 2024-03-28
-    * Switched JAXB Maven plugin to `org.jvnet.jaxb:jaxb-maven-plugin`
-    * Updated to ph-poi 6.0.2 for Java 21 compatibility 
-* v7.1.1 - 2023-07-31
-    * Updated to ph-commons 11.1
-* v7.1.0 - 2023-04-22
-    * Moved the XML Schema to folder `external/...`
-    * Deprecated classes `Genericode(Reader|Validator|Writer)` in favour of the explicit marshallers
-    * Using the `xml.xsd` from `ph-xsds-xml` instead of a local one
-* v7.0.0 - 2023-01-08
-    * Using Java 11 as the baseline
-    * Updated to ph-commons 11
-    * Using JAXB 4.0 as the baseline
-* v6.3.0 - 2021-05-02
-    * Updated to ph-commons 10.1
-* v6.2.0 - 2021-03-21
-    * Updated to ph-commons 10
-* v6.1.1 - 2020-09-17
-    * Updated to Jakarta JAXB 2.3.3
-* v6.1.0 - 2018-11-22
-    * Added namespace URI constants in the Cxxx files.
-    * Updated to ph-commons 9.2.0
-* v6.0.0 - 2017-11-07
-    * Updated to ph-commons 9.0.0
-* v5.0.1 - 2017-01-20
-    * Added new package `com.helger.genericode.builder` with more flexible reader/writer/validator
-    * Binds to ph-commons 8.6.x
-* v5.0.0 - 2016-06-11
-    * Requires JDK 8
-    * Binds to ph-commons 8.x
-* v4.1.1 - 2015-07-21
-    * Last version with JDK 6 support
-* v4.1.0 - 2015-07-21   
-* v4.0.0 - 2015-07-09
-    * Binds to ph-commons 6.x
-* v3.3.1 - 2015-03-12
-    * Binds to ph-commons 5.x
-* v3.3.0 - 2014-08-25
+v8.0.0 - work in progress
+* Requires Java 17 as the minimum version
+* Updated to ph-commons 12.0.0
+* Removed all deprecated methods marked for removal
+
+v7.1.2 - 2024-03-28
+* Switched JAXB Maven plugin to `org.jvnet.jaxb:jaxb-maven-plugin`
+* Updated to ph-poi 6.0.2 for Java 21 compatibility 
+
+v7.1.1 - 2023-07-31
+* Updated to ph-commons 11.1
+
+v7.1.0 - 2023-04-22
+* Moved the XML Schema to folder `external/...`
+* Deprecated classes `Genericode(Reader|Validator|Writer)` in favour of the explicit marshallers
+* Using the `xml.xsd` from `ph-xsds-xml` instead of a local one
+
+v7.0.0 - 2023-01-08
+* Using Java 11 as the baseline
+* Updated to ph-commons 11
+* Using JAXB 4.0 as the baseline
+
+v6.3.0 - 2021-05-02
+* Updated to ph-commons 10.1
+
+v6.2.0 - 2021-03-21
+* Updated to ph-commons 10
+
+v6.1.1 - 2020-09-17
+* Updated to Jakarta JAXB 2.3.3
+
+v6.1.0 - 2018-11-22
+* Added namespace URI constants in the Cxxx files.
+* Updated to ph-commons 9.2.0
+
+v6.0.0 - 2017-11-07
+* Updated to ph-commons 9.0.0
+
+v5.0.1 - 2017-01-20
+* Added new package `com.helger.genericode.builder` with more flexible reader/writer/validator
+* Binds to ph-commons 8.6.x
+
+v5.0.0 - 2016-06-11
+* Requires JDK 8
+* Binds to ph-commons 8.x
+
+v4.1.1 - 2015-07-21
+* Last version with JDK 6 support
+
+v4.1.0 - 2015-07-21   
+
+v4.0.0 - 2015-07-09
+* Binds to ph-commons 6.x
+
+v3.3.1 - 2015-03-12
+* Binds to ph-commons 5.x
+
+v3.3.0 - 2014-08-25
 
 ---
 

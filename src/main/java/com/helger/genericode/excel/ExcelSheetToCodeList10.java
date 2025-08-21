@@ -18,16 +18,14 @@ package com.helger.genericode.excel;
 
 import java.net.URI;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.Immutable;
 import javax.xml.namespace.QName;
 
 import org.apache.poi.ss.usermodel.Sheet;
 
-import com.helger.commons.ValueEnforcer;
-import com.helger.commons.collection.impl.ICommonsList;
-import com.helger.commons.string.StringHelper;
+import com.helger.annotation.concurrent.Immutable;
+import com.helger.base.enforce.ValueEnforcer;
+import com.helger.base.string.StringHelper;
+import com.helger.collection.commons.ICommonsList;
 import com.helger.genericode.Genericode10Helper;
 import com.helger.genericode.v10.Annotation;
 import com.helger.genericode.v10.AnyOtherContent;
@@ -43,12 +41,13 @@ import com.helger.genericode.v10.UseType;
 import com.helger.genericode.v10.Value;
 import com.helger.poi.excel.ExcelReadHelper;
 
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 import jakarta.xml.bind.JAXBElement;
 
 /**
- * A utility class to convert a simple Excel sheet into a code list v1.0
- * consisting of simple values. Please note that merged cells are currently not
- * supported!
+ * A utility class to convert a simple Excel sheet into a code list v1.0 consisting of simple
+ * values. Please note that merged cells are currently not supported!
  *
  * @author Philip Helger
  */
@@ -79,7 +78,10 @@ public final class ExcelSheetToCodeList10
     // create annotation
     final Annotation aAnnotation = aFactory.createAnnotation ();
     final AnyOtherContent aContent = aFactory.createAnyOtherContent ();
-    aContent.addAny (new JAXBElement <> (QNAME_ANNOTATION, String.class, null, "Automatically created by ph-genericode. Do NOT edit."));
+    aContent.addAny (new JAXBElement <> (QNAME_ANNOTATION,
+                                         String.class,
+                                         null,
+                                         "Automatically created by ph-genericode. Do NOT edit."));
     aAnnotation.setAppInfo (aContent);
     ret.setAnnotation (aAnnotation);
 
@@ -106,7 +108,9 @@ public final class ExcelSheetToCodeList10
       // Read long name (optional)
       String sLongName = null;
       if (aReadOptions.getLineIndexLongName () >= 0)
-        sLongName = aExcelSheet.getRow (aReadOptions.getLineIndexLongName ()).getCell (aExcelColumn.getIndex ()).getStringCellValue ();
+        sLongName = aExcelSheet.getRow (aReadOptions.getLineIndexLongName ())
+                               .getCell (aExcelColumn.getIndex ())
+                               .getStringCellValue ();
 
       // Create Genericode column set
       final Column aColumn = Genericode10Helper.createColumn (aExcelColumn.getColumnID (),
@@ -121,7 +125,10 @@ public final class ExcelSheetToCodeList10
       if (aExcelColumn.isKeyColumn ())
       {
         // Create key definition
-        final Key aKey = Genericode10Helper.createKey (aExcelColumn.getColumnID () + "Key", sShortName, sLongName, aColumn);
+        final Key aKey = Genericode10Helper.createKey (aExcelColumn.getColumnID () + "Key",
+                                                       sShortName,
+                                                       sLongName,
+                                                       aColumn);
 
         // Add key
         aColumnSet.addKeyChoice (aKey);
@@ -146,7 +153,7 @@ public final class ExcelSheetToCodeList10
       for (final ExcelReadColumn <UseType> aExcelColumn : aExcelColumns)
       {
         final String sValue = ExcelReadHelper.getCellValueString (aExcelRow.getCell (aExcelColumn.getIndex ()));
-        if (StringHelper.hasText (sValue) || aExcelColumn.getUseType () == UseType.REQUIRED)
+        if (StringHelper.isNotEmpty (sValue) || aExcelColumn.getUseType () == UseType.REQUIRED)
         {
           // Create a single value in the current row
           final Value aValue = aFactory.createValue ();

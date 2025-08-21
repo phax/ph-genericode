@@ -27,11 +27,11 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Test;
 import org.w3c.dom.Document;
 
-import com.helger.commons.io.resource.ClassPathResource;
-import com.helger.commons.io.resource.IReadableResource;
 import com.helger.genericode.Genericode10CodeListMarshaller;
 import com.helger.genericode.v10.CodeListDocument;
 import com.helger.genericode.v10.UseType;
+import com.helger.io.resource.ClassPathResource;
+import com.helger.io.resource.IReadableResource;
 import com.helger.poi.excel.EExcelVersion;
 
 /**

@@ -21,16 +21,16 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 
-import javax.annotation.Nonnull;
-
 import org.junit.Test;
 import org.w3c.dom.Document;
 
-import com.helger.commons.io.file.FileSystemIterator;
-import com.helger.commons.io.resource.FileSystemResource;
-import com.helger.commons.io.resource.IReadableResource;
 import com.helger.cva.v10.ContextValueAssociation;
+import com.helger.io.file.FileSystemIterator;
+import com.helger.io.resource.FileSystemResource;
+import com.helger.io.resource.IReadableResource;
 import com.helger.xml.serialize.read.DOMReader;
+
+import jakarta.annotation.Nonnull;
 
 /**
  * Test class for class {@link CVA10Marshaller}.

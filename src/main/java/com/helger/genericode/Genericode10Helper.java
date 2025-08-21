@@ -19,18 +19,15 @@ package com.helger.genericode;
 import java.util.Collection;
 import java.util.List;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.Immutable;
-
-import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotation.Nonempty;
-import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.collection.CollectionHelper;
-import com.helger.commons.collection.impl.CommonsArrayList;
-import com.helger.commons.collection.impl.ICommonsList;
-import com.helger.commons.lang.ClassHelper;
-import com.helger.commons.string.StringHelper;
+import com.helger.annotation.Nonempty;
+import com.helger.annotation.concurrent.Immutable;
+import com.helger.annotation.style.ReturnsMutableCopy;
+import com.helger.base.enforce.ValueEnforcer;
+import com.helger.base.lang.clazz.ClassHelper;
+import com.helger.base.string.StringHelper;
+import com.helger.collection.CollectionFind;
+import com.helger.collection.commons.CommonsArrayList;
+import com.helger.collection.commons.ICommonsList;
 import com.helger.genericode.v10.Column;
 import com.helger.genericode.v10.ColumnRef;
 import com.helger.genericode.v10.ColumnSet;
@@ -43,6 +40,9 @@ import com.helger.genericode.v10.ShortName;
 import com.helger.genericode.v10.SimpleValue;
 import com.helger.genericode.v10.UseType;
 import com.helger.genericode.v10.Value;
+
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 
 /**
  * Helper class for Genericode 1.0 reading
@@ -59,26 +59,25 @@ public final class Genericode10Helper
    * Get the ID of the passed column element.
    *
    * @param aColumnElement
-   *        The column element to use. Must be either a {@link ColumnRef} or a
-   *        {@link Column}.
+   *        The column element to use. Must be either a {@link ColumnRef} or a {@link Column}.
    * @return The ID of the object
    */
   @Nonnull
   public static String getColumnElementID (@Nonnull final Object aColumnElement)
   {
-    if (aColumnElement instanceof ColumnRef)
-      return ((ColumnRef) aColumnElement).getId ();
-    if (aColumnElement instanceof Column)
-      return ((Column) aColumnElement).getId ();
-    if (aColumnElement instanceof Key)
+    if (aColumnElement instanceof final ColumnRef aColRef)
+      return aColRef.getId ();
+    if (aColumnElement instanceof final Column aCol)
+      return aCol.getId ();
+    if (aColumnElement instanceof final Key aKey)
     {
-      final List <KeyColumnRef> aKeyColumnRefs = ((Key) aColumnElement).getColumnRef ();
-      final KeyColumnRef aKeyColumnRef = CollectionHelper.getFirstElement (aKeyColumnRefs);
+      final List <KeyColumnRef> aKeyColumnRefs = aKey.getColumnRef ();
+      final KeyColumnRef aKeyColumnRef = CollectionFind.getFirstElement (aKeyColumnRefs);
       if (aKeyColumnRef == null)
         throw new IllegalArgumentException ("Key contains not KeyColumnRef!!");
       final Object aRef = aKeyColumnRef.getRef ();
-      if (aRef instanceof Column)
-        return ((Column) aRef).getId ();
+      if (aRef instanceof final Column aCol)
+        return aCol.getId ();
       throw new IllegalArgumentException ("Unsupported referenced object: " +
                                           aRef +
                                           " - " +
@@ -91,8 +90,8 @@ public final class Genericode10Helper
   }
 
   /**
-   * Get the value of a column identified by an ID within a specified row. This
-   * method only handles simple values.
+   * Get the value of a column identified by an ID within a specified row. This method only handles
+   * simple values.
    *
    * @param aRow
    *        The row to scan. May not be <code>null</code>.
@@ -120,8 +119,7 @@ public final class Genericode10Helper
    *
    * @param aColumnSet
    *        The column set to scan. May not be <code>null</code>.
-   * @return A non-<code>null</code> list of all columns. Never
-   *         <code>null</code> but maybe empty.
+   * @return A non-<code>null</code> list of all columns. Never <code>null</code> but maybe empty.
    */
   @Nonnull
   @ReturnsMutableCopy
@@ -138,12 +136,12 @@ public final class Genericode10Helper
    * @param aColumnSet
    *        The column set to scan. May not be <code>null</code>.
    * @param aTarget
-   *        A non-<code>null</code> list where all columns should be added. May
-   *        not be <code>null</code>.
+   *        A non-<code>null</code> list where all columns should be added. May not be
+   *        <code>null</code>.
    */
   public static void getAllColumns (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <Column> aTarget)
   {
-    CollectionHelper.findAll (aColumnSet.getColumnChoice (), o -> o instanceof Column, o -> aTarget.add ((Column) o));
+    CollectionFind.findAll (aColumnSet.getColumnChoice (), Column.class::isInstance, o -> aTarget.add ((Column) o));
   }
 
   /**
@@ -151,8 +149,8 @@ public final class Genericode10Helper
    *
    * @param aColumnSet
    *        The column set to scan. May not be <code>null</code>.
-   * @return A non-<code>null</code> list of all column IDs. Never
-   *         <code>null</code> but maybe empty.
+   * @return A non-<code>null</code> list of all column IDs. Never <code>null</code> but maybe
+   *         empty.
    */
   @Nonnull
   @ReturnsMutableCopy
@@ -173,9 +171,9 @@ public final class Genericode10Helper
    */
   public static void getAllColumnIDs (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <String> aTarget)
   {
-    CollectionHelper.findAll (aColumnSet.getColumnChoice (),
-                              o -> o instanceof Column,
-                              o -> aTarget.add (((Column) o).getId ()));
+    CollectionFind.findAll (aColumnSet.getColumnChoice (),
+                            Column.class::isInstance,
+                            o -> aTarget.add (((Column) o).getId ()));
   }
 
   /**
@@ -202,8 +200,7 @@ public final class Genericode10Helper
    *
    * @param aColumnSet
    *        The column set to scan. May not be <code>null</code>.
-   * @return A non-<code>null</code> list of all keys. Never <code>null</code>
-   *         but maybe empty.
+   * @return A non-<code>null</code> list of all keys. Never <code>null</code> but maybe empty.
    */
   @Nonnull
   @ReturnsMutableCopy
@@ -224,7 +221,7 @@ public final class Genericode10Helper
    */
   public static void getAllKeys (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <Key> aTarget)
   {
-    CollectionHelper.findAll (aColumnSet.getKeyChoice (), o -> o instanceof Key, o -> aTarget.add ((Key) o));
+    CollectionFind.findAll (aColumnSet.getKeyChoice (), Key.class::isInstance, o -> aTarget.add ((Key) o));
   }
 
   /**
@@ -232,8 +229,7 @@ public final class Genericode10Helper
    *
    * @param aColumnSet
    *        The column set to scan. May not be <code>null</code>.
-   * @return A non-<code>null</code> list of all key IDs. Never
-   *         <code>null</code> but maybe empty.
+   * @return A non-<code>null</code> list of all key IDs. Never <code>null</code> but maybe empty.
    */
   @Nonnull
   @ReturnsMutableCopy
@@ -254,7 +250,7 @@ public final class Genericode10Helper
    */
   public static void getAllKeyIDs (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <String> aTarget)
   {
-    CollectionHelper.findAll (aColumnSet.getKeyChoice (), o -> o instanceof Key, o -> aTarget.add (((Key) o).getId ()));
+    CollectionFind.findAll (aColumnSet.getKeyChoice (), Key.class::isInstance, o -> aTarget.add (((Key) o).getId ()));
   }
 
   /**
@@ -290,8 +286,8 @@ public final class Genericode10Helper
     if (sColumnID != null)
       for (final Key aKey : getAllKeys (aColumnSet))
         for (final KeyColumnRef aColumnRef : aKey.getColumnRef ())
-          if (aColumnRef.getRef () instanceof Column)
-            if (((Column) aColumnRef.getRef ()).getId ().equals (sColumnID))
+          if (aColumnRef.getRef () instanceof final Column aCol)
+            if (aCol.getId ().equals (sColumnID))
               return true;
     return false;
   }
@@ -388,7 +384,7 @@ public final class Genericode10Helper
     aColumn.setId (sColumnID);
     aColumn.setUse (eUseType);
     aColumn.setShortName (createShortName (sShortName));
-    if (StringHelper.hasText (sLongName))
+    if (StringHelper.isNotEmpty (sLongName))
       aColumn.getLongName ().add (createLongName (sLongName));
     final Data aData = new Data ();
     aData.setType (sDataType);
@@ -422,7 +418,7 @@ public final class Genericode10Helper
     final Key aKey = new Key ();
     aKey.setId (sColumnID);
     aKey.setShortName (createShortName (sShortName));
-    if (StringHelper.hasText (sLongName))
+    if (StringHelper.isNotEmpty (sLongName))
       aKey.getLongName ().add (createLongName (sLongName));
     aKey.getColumnRef ().add (createKeyColumnRef (aColumn));
     return aKey;

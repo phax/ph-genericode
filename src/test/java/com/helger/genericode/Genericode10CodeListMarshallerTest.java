@@ -21,18 +21,18 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 
-import javax.annotation.Nonnull;
-
 import org.junit.Test;
 import org.w3c.dom.Document;
 
-import com.helger.commons.io.file.FileSystemIterator;
-import com.helger.commons.io.file.IFileFilter;
-import com.helger.commons.io.resource.FileSystemResource;
-import com.helger.commons.io.resource.IReadableResource;
-import com.helger.commons.mock.CommonsTestHelper;
 import com.helger.genericode.v10.CodeListDocument;
+import com.helger.io.file.FileSystemIterator;
+import com.helger.io.file.IFileFilter;
+import com.helger.io.resource.FileSystemResource;
+import com.helger.io.resource.IReadableResource;
+import com.helger.unittest.support.TestHelper;
 import com.helger.xml.serialize.read.DOMReader;
+
+import jakarta.annotation.Nonnull;
 
 /**
  * Test class for class {@link Genericode10CodeListMarshaller}.
@@ -63,8 +63,8 @@ public final class Genericode10CodeListMarshallerTest
     // Read code list again
     final CodeListDocument aCLDoc2 = aMarshaller.read (aDoc2);
     assertNotNull (aRes.getPath (), aCLDoc2);
-    CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCLDoc, aCLDoc2);
-    CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCLDoc, aCLDoc.clone ());
+    TestHelper.testDefaultImplementationWithEqualContentObject (aCLDoc, aCLDoc2);
+    TestHelper.testDefaultImplementationWithEqualContentObject (aCLDoc, aCLDoc.clone ());
   }
 
   @Test
