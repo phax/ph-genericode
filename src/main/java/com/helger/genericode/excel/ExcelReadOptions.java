@@ -18,6 +18,8 @@ package com.helger.genericode.excel;
 
 import java.io.Serializable;
 
+import org.jspecify.annotations.NonNull;
+
 import com.helger.annotation.Nonempty;
 import com.helger.annotation.Nonnegative;
 import com.helger.annotation.concurrent.NotThreadSafe;
@@ -27,8 +29,6 @@ import com.helger.base.enforce.ValueEnforcer;
 import com.helger.collection.commons.CommonsTreeMap;
 import com.helger.collection.commons.ICommonsList;
 import com.helger.collection.commons.ICommonsMap;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * This class contains the options that are used to read the Excel file.
@@ -63,7 +63,7 @@ public class ExcelReadOptions <USE_TYPE extends Serializable> implements Seriali
    *        Must be &ge; 0.
    * @return this
    */
-  @Nonnull
+  @NonNull
   public ExcelReadOptions <USE_TYPE> setLinesToSkip (@Nonnegative final int nLinesToSkip)
   {
     ValueEnforcer.isGE0 (nLinesToSkip, "LinesToSkip");
@@ -82,7 +82,7 @@ public class ExcelReadOptions <USE_TYPE extends Serializable> implements Seriali
     return m_nLinesToSkip;
   }
 
-  @Nonnull
+  @NonNull
   public ExcelReadOptions <USE_TYPE> setLineIndexShortName (@Nonnegative final int nLineIndexShortName)
   {
     ValueEnforcer.isGE0 (nLineIndexShortName, "LineIndexShortName");
@@ -97,7 +97,7 @@ public class ExcelReadOptions <USE_TYPE extends Serializable> implements Seriali
     return m_nLineIndexShortName;
   }
 
-  @Nonnull
+  @NonNull
   public ExcelReadOptions <USE_TYPE> setLineIndexLongName (final int nLineIndexLongName)
   {
     m_nLineIndexLongName = nLineIndexLongName;
@@ -130,11 +130,11 @@ public class ExcelReadOptions <USE_TYPE extends Serializable> implements Seriali
    *        otherwise. Only required columns can be key columns.
    * @return this
    */
-  @Nonnull
+  @NonNull
   public ExcelReadOptions <USE_TYPE> addColumn (@Nonnegative final int nIndex,
-                                                @Nonnull @Nonempty final String sColumnID,
-                                                @Nonnull final USE_TYPE eUseType,
-                                                @Nonnull @Nonempty final String sDataType,
+                                                @NonNull @Nonempty final String sColumnID,
+                                                @NonNull final USE_TYPE eUseType,
+                                                @NonNull @Nonempty final String sDataType,
                                                 final boolean bKeyColumn)
   {
     ValueEnforcer.isGE0 (nIndex, "Index");
@@ -149,7 +149,7 @@ public class ExcelReadOptions <USE_TYPE extends Serializable> implements Seriali
   /**
    * @return A list of all defined columns, sorted ascending by index.
    */
-  @Nonnull
+  @NonNull
   @ReturnsMutableCopy
   public ICommonsList <ExcelReadColumn <USE_TYPE>> getAllColumns ()
   {

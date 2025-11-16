@@ -21,6 +21,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 
+import org.jspecify.annotations.NonNull;
 import org.junit.Test;
 import org.w3c.dom.Document;
 
@@ -30,8 +31,6 @@ import com.helger.io.resource.FileSystemResource;
 import com.helger.io.resource.IReadableResource;
 import com.helger.xml.serialize.read.DOMReader;
 
-import jakarta.annotation.Nonnull;
-
 /**
  * Test class for class {@link CVA10Marshaller}.
  *
@@ -39,7 +38,7 @@ import jakarta.annotation.Nonnull;
  */
 public final class CVA10MarshallerTest
 {
-  private static void _testReadAndWriteValid (@Nonnull final IReadableResource aRes)
+  private static void _testReadAndWriteValid (@NonNull final IReadableResource aRes)
   {
     // Resolve resource
     assertTrue (aRes.exists ());

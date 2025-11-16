@@ -18,14 +18,14 @@ package com.helger.cva;
 
 import java.util.List;
 
+import org.jspecify.annotations.NonNull;
+
 import com.helger.annotation.concurrent.Immutable;
 import com.helger.annotation.style.CodingStyleguideUnaware;
 import com.helger.annotation.style.PresentForCodeCoverage;
 import com.helger.collection.commons.CommonsArrayList;
 import com.helger.io.resource.ClassPathResource;
 import com.helger.xsds.xml.CXML_XSD;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * Constants for the handling of ContextValueAssociation documents
@@ -37,7 +37,7 @@ public final class CCVA
 {
   public static final String CVA_10_NAMESPACE_URI = "http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/";
 
-  @Nonnull
+  @NonNull
   private static ClassLoader _getCL ()
   {
     return CCVA.class.getClassLoader ();

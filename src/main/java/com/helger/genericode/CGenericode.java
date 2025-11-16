@@ -18,14 +18,14 @@ package com.helger.genericode;
 
 import java.util.List;
 
+import org.jspecify.annotations.NonNull;
+
 import com.helger.annotation.concurrent.Immutable;
 import com.helger.annotation.style.CodingStyleguideUnaware;
 import com.helger.annotation.style.PresentForCodeCoverage;
 import com.helger.collection.commons.CommonsArrayList;
 import com.helger.io.resource.ClassPathResource;
 import com.helger.xsds.xml.CXML_XSD;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * Constants for the handling of Genericode documents
@@ -38,7 +38,7 @@ public final class CGenericode
   public static final String GENERICODE_04_NAMESPACE_URI = "http://genericode.org/2006/ns/CodeList/0.4/";
   public static final String GENERICODE_10_NAMESPACE_URI = "http://docs.oasis-open.org/codelist/ns/genericode/1.0/";
 
-  @Nonnull
+  @NonNull
   private static ClassLoader _getCL ()
   {
     return CGenericode.class.getClassLoader ();

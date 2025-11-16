@@ -21,6 +21,8 @@ import java.net.URI;
 import javax.xml.namespace.QName;
 
 import org.apache.poi.ss.usermodel.Sheet;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 
 import com.helger.annotation.concurrent.Immutable;
 import com.helger.base.enforce.ValueEnforcer;
@@ -41,8 +43,6 @@ import com.helger.genericode.v04.UseType;
 import com.helger.genericode.v04.Value;
 import com.helger.poi.excel.ExcelReadHelper;
 
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
 import jakarta.xml.bind.JAXBElement;
 
 /**
@@ -60,13 +60,13 @@ public final class ExcelSheetToCodeList04
   private ExcelSheetToCodeList04 ()
   {}
 
-  @Nonnull
-  public static CodeListDocument convertToSimpleCodeList (@Nonnull final Sheet aExcelSheet,
-                                                          @Nonnull final ExcelReadOptions <UseType> aReadOptions,
-                                                          @Nonnull final String sCodeListName,
-                                                          @Nonnull final String sCodeListVersion,
-                                                          @Nonnull final URI aCanonicalUri,
-                                                          @Nonnull final URI aCanonicalVersionUri,
+  @NonNull
+  public static CodeListDocument convertToSimpleCodeList (@NonNull final Sheet aExcelSheet,
+                                                          @NonNull final ExcelReadOptions <UseType> aReadOptions,
+                                                          @NonNull final String sCodeListName,
+                                                          @NonNull final String sCodeListVersion,
+                                                          @NonNull final URI aCanonicalUri,
+                                                          @NonNull final URI aCanonicalVersionUri,
                                                           @Nullable final URI aLocationURI)
   {
     ValueEnforcer.notNull (aExcelSheet, "ExcelSheet");

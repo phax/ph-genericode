@@ -22,6 +22,7 @@ import static org.junit.Assert.assertTrue;
 import java.io.File;
 import java.util.List;
 
+import org.jspecify.annotations.NonNull;
 import org.junit.Test;
 import org.w3c.dom.Document;
 
@@ -38,8 +39,6 @@ import com.helger.unittest.support.TestHelper;
 import com.helger.xml.namespace.MapBasedNamespaceContext;
 import com.helger.xml.serialize.read.DOMReader;
 
-import jakarta.annotation.Nonnull;
-
 /**
  * Test class for class {@link Genericode10CodeListMarshaller}.
  *
@@ -48,7 +47,7 @@ import jakarta.annotation.Nonnull;
  */
 public final class Genericode10EN16931CodeListMarshallerTest
 {
-  private static void _testReadAndWriteValid (@Nonnull final IReadableResource aRes)
+  private static void _testReadAndWriteValid (@NonNull final IReadableResource aRes)
   {
     // Resolve resource
     assertTrue (aRes.getPath (), aRes.exists ());

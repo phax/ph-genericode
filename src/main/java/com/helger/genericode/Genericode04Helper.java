@@ -19,6 +19,9 @@ package com.helger.genericode;
 import java.util.Collection;
 import java.util.List;
 
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
 import com.helger.annotation.Nonempty;
 import com.helger.annotation.concurrent.Immutable;
 import com.helger.annotation.style.ReturnsMutableCopy;
@@ -41,9 +44,6 @@ import com.helger.genericode.v04.SimpleValue;
 import com.helger.genericode.v04.UseType;
 import com.helger.genericode.v04.Value;
 
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
-
 /**
  * Helper class for Genericode 0.4 reading
  *
@@ -62,8 +62,8 @@ public final class Genericode04Helper
    *        The column element to use. Must be either a {@link ColumnRef} or a {@link Column}.
    * @return The ID of the object
    */
-  @Nonnull
-  public static String getColumnElementID (@Nonnull final Object aColumnElement)
+  @NonNull
+  public static String getColumnElementID (@NonNull final Object aColumnElement)
   {
     if (aColumnElement instanceof final ColumnRef aColRef)
       return aColRef.getId ();
@@ -100,7 +100,7 @@ public final class Genericode04Helper
    * @return <code>null</code> if no such column is contained
    */
   @Nullable
-  public static String getRowValue (@Nonnull final Row aRow, @Nonnull final String sColumnID)
+  public static String getRowValue (@NonNull final Row aRow, @NonNull final String sColumnID)
   {
     for (final Value aValue : aRow.getValue ())
     {
@@ -121,9 +121,9 @@ public final class Genericode04Helper
    *        The column set to scan. May not be <code>null</code>.
    * @return A non-<code>null</code> list of all columns. Never <code>null</code> but maybe empty.
    */
-  @Nonnull
+  @NonNull
   @ReturnsMutableCopy
-  public static ICommonsList <Column> getAllColumns (@Nonnull final ColumnSet aColumnSet)
+  public static ICommonsList <Column> getAllColumns (@NonNull final ColumnSet aColumnSet)
   {
     final ICommonsList <Column> ret = new CommonsArrayList <> ();
     getAllColumns (aColumnSet, ret);
@@ -138,7 +138,7 @@ public final class Genericode04Helper
    * @param aTarget
    *        The target collection to be filled. May not be <code>null</code>.
    */
-  public static void getAllColumns (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <Column> aTarget)
+  public static void getAllColumns (@NonNull final ColumnSet aColumnSet, @NonNull final Collection <Column> aTarget)
   {
     CollectionFind.findAll (aColumnSet.getColumnChoice (), Column.class::isInstance, o -> aTarget.add ((Column) o));
   }
@@ -151,9 +151,9 @@ public final class Genericode04Helper
    * @return A non-<code>null</code> list of all column IDs. Never <code>null</code> but maybe
    *         empty.
    */
-  @Nonnull
+  @NonNull
   @ReturnsMutableCopy
-  public static ICommonsList <String> getAllColumnIDs (@Nonnull final ColumnSet aColumnSet)
+  public static ICommonsList <String> getAllColumnIDs (@NonNull final ColumnSet aColumnSet)
   {
     final ICommonsList <String> ret = new CommonsArrayList <> ();
     getAllColumnIDs (aColumnSet, ret);
@@ -168,7 +168,7 @@ public final class Genericode04Helper
    * @param aTarget
    *        The target collection to be filled. May not be <code>null</code>.
    */
-  public static void getAllColumnIDs (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <String> aTarget)
+  public static void getAllColumnIDs (@NonNull final ColumnSet aColumnSet, @NonNull final Collection <String> aTarget)
   {
     CollectionFind.findAll (aColumnSet.getColumnChoice (),
                             Column.class::isInstance,
@@ -185,7 +185,7 @@ public final class Genericode04Helper
    * @return <code>null</code> if no such column exists.
    */
   @Nullable
-  public static Column getColumnOfID (@Nonnull final ColumnSet aColumnSet, @Nullable final String sID)
+  public static Column getColumnOfID (@NonNull final ColumnSet aColumnSet, @Nullable final String sID)
   {
     if (sID != null)
       for (final Column aColumn : getAllColumns (aColumnSet))
@@ -201,9 +201,9 @@ public final class Genericode04Helper
    *        The column set to scan. May not be <code>null</code>.
    * @return A non-<code>null</code> list of all keys. Never <code>null</code> but maybe empty.
    */
-  @Nonnull
+  @NonNull
   @ReturnsMutableCopy
-  public static ICommonsList <Key> getAllKeys (@Nonnull final ColumnSet aColumnSet)
+  public static ICommonsList <Key> getAllKeys (@NonNull final ColumnSet aColumnSet)
   {
     final ICommonsList <Key> ret = new CommonsArrayList <> ();
     getAllKeys (aColumnSet, ret);
@@ -218,7 +218,7 @@ public final class Genericode04Helper
    * @param aTarget
    *        The target collection to be filled. May not be <code>null</code>.
    */
-  public static void getAllKeys (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <Key> aTarget)
+  public static void getAllKeys (@NonNull final ColumnSet aColumnSet, @NonNull final Collection <Key> aTarget)
   {
     CollectionFind.findAll (aColumnSet.getKeyChoice (), Key.class::isInstance, o -> aTarget.add ((Key) o));
   }
@@ -230,9 +230,9 @@ public final class Genericode04Helper
    *        The column set to scan. May not be <code>null</code>.
    * @return A non-<code>null</code> list of all key IDs. Never <code>null</code> but maybe empty.
    */
-  @Nonnull
+  @NonNull
   @ReturnsMutableCopy
-  public static ICommonsList <String> getAllKeyIDs (@Nonnull final ColumnSet aColumnSet)
+  public static ICommonsList <String> getAllKeyIDs (@NonNull final ColumnSet aColumnSet)
   {
     final ICommonsList <String> ret = new CommonsArrayList <> ();
     getAllKeyIDs (aColumnSet, ret);
@@ -247,7 +247,7 @@ public final class Genericode04Helper
    * @param aTarget
    *        The target collection to be filled. May not be <code>null</code>.
    */
-  public static void getAllKeyIDs (@Nonnull final ColumnSet aColumnSet, @Nonnull final Collection <String> aTarget)
+  public static void getAllKeyIDs (@NonNull final ColumnSet aColumnSet, @NonNull final Collection <String> aTarget)
   {
     CollectionFind.findAll (aColumnSet.getKeyChoice (), Key.class::isInstance, o -> aTarget.add (((Key) o).getId ()));
   }
@@ -262,7 +262,7 @@ public final class Genericode04Helper
    * @return <code>null</code> if no such key exists.
    */
   @Nullable
-  public static Key getKeyOfID (@Nonnull final ColumnSet aColumnSet, @Nullable final String sID)
+  public static Key getKeyOfID (@NonNull final ColumnSet aColumnSet, @Nullable final String sID)
   {
     if (sID != null)
       for (final Key aKey : getAllKeys (aColumnSet))
@@ -280,7 +280,7 @@ public final class Genericode04Helper
    *        The column ID to search. May be <code>null</code>.
    * @return <code>true</code> if the passed column ID is a key column
    */
-  public static boolean isKeyColumn (@Nonnull final ColumnSet aColumnSet, @Nullable final String sColumnID)
+  public static boolean isKeyColumn (@NonNull final ColumnSet aColumnSet, @Nullable final String sColumnID)
   {
     if (sColumnID != null)
       for (final Key aKey : getAllKeys (aColumnSet))
@@ -298,7 +298,7 @@ public final class Genericode04Helper
    *        The value to assign
    * @return Never <code>null</code>.
    */
-  @Nonnull
+  @NonNull
   public static ShortName createShortName (@Nullable final String sValue)
   {
     final ShortName aShortName = new ShortName ();
@@ -313,7 +313,7 @@ public final class Genericode04Helper
    *        The value to assign
    * @return Never <code>null</code>.
    */
-  @Nonnull
+  @NonNull
   public static LongName createLongName (@Nullable final String sValue)
   {
     final LongName aLongName = new LongName ();
@@ -328,7 +328,7 @@ public final class Genericode04Helper
    *        The value to assign
    * @return Never <code>null</code>.
    */
-  @Nonnull
+  @NonNull
   public static SimpleValue createSimpleValue (@Nullable final String sValue)
   {
     final SimpleValue aSimpleValue = new SimpleValue ();
@@ -343,7 +343,7 @@ public final class Genericode04Helper
    *        The column to reference
    * @return Never <code>null</code>.
    */
-  @Nonnull
+  @NonNull
   public static KeyColumnRef createKeyColumnRef (@Nullable final Column aColumn)
   {
     final KeyColumnRef aColumnRef = new KeyColumnRef ();
@@ -367,12 +367,12 @@ public final class Genericode04Helper
    *        The data type to use
    * @return Never <code>null</code>.
    */
-  @Nonnull
-  public static Column createColumn (@Nonnull @Nonempty final String sColumnID,
-                                     @Nonnull final UseType eUseType,
-                                     @Nonnull @Nonempty final String sShortName,
+  @NonNull
+  public static Column createColumn (@NonNull @Nonempty final String sColumnID,
+                                     @NonNull final UseType eUseType,
+                                     @NonNull @Nonempty final String sShortName,
                                      @Nullable final String sLongName,
-                                     @Nonnull @Nonempty final String sDataType)
+                                     @NonNull @Nonempty final String sDataType)
   {
     ValueEnforcer.notEmpty (sColumnID, "ColumnID");
     ValueEnforcer.notNull (eUseType, "useType");
@@ -404,11 +404,11 @@ public final class Genericode04Helper
    *        The referenced column. May not be <code>null</code>.
    * @return Never <code>null</code>.
    */
-  @Nonnull
-  public static Key createKey (@Nonnull @Nonempty final String sColumnID,
-                               @Nonnull @Nonempty final String sShortName,
+  @NonNull
+  public static Key createKey (@NonNull @Nonempty final String sColumnID,
+                               @NonNull @Nonempty final String sShortName,
                                @Nullable final String sLongName,
-                               @Nonnull final Column aColumn)
+                               @NonNull final Column aColumn)
   {
     ValueEnforcer.notEmpty (sColumnID, "ColumnID");
     ValueEnforcer.notEmpty (sShortName, "ShortName");

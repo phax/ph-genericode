@@ -18,13 +18,13 @@ package com.helger.genericode.excel;
 
 import java.io.Serializable;
 
+import org.jspecify.annotations.NonNull;
+
 import com.helger.annotation.Nonempty;
 import com.helger.annotation.Nonnegative;
 import com.helger.annotation.concurrent.Immutable;
 import com.helger.base.enforce.ValueEnforcer;
 import com.helger.base.tostring.ToStringGenerator;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * This class represents a single column definition when converting an Excel
@@ -44,9 +44,9 @@ public class ExcelReadColumn <USE_TYPE extends Serializable> implements Serializ
   private final boolean m_bKeyColumn;
 
   public ExcelReadColumn (@Nonnegative final int nIndex,
-                          @Nonnull @Nonempty final String sColumnID,
-                          @Nonnull final USE_TYPE eUseType,
-                          @Nonnull @Nonempty final String sDataType,
+                          @NonNull @Nonempty final String sColumnID,
+                          @NonNull final USE_TYPE eUseType,
+                          @NonNull @Nonempty final String sDataType,
                           final boolean bKeyColumn)
   {
     ValueEnforcer.isGE0 (nIndex, "Index");
@@ -75,7 +75,7 @@ public class ExcelReadColumn <USE_TYPE extends Serializable> implements Serializ
   /**
    * @return The ID of this column to be used in the Genericode file.
    */
-  @Nonnull
+  @NonNull
   @Nonempty
   public String getColumnID ()
   {
@@ -85,7 +85,7 @@ public class ExcelReadColumn <USE_TYPE extends Serializable> implements Serializ
   /**
    * @return optional or required?
    */
-  @Nonnull
+  @NonNull
   public USE_TYPE getUseType ()
   {
     return m_eUseType;
@@ -94,7 +94,7 @@ public class ExcelReadColumn <USE_TYPE extends Serializable> implements Serializ
   /**
    * @return The data type for this column.
    */
-  @Nonnull
+  @NonNull
   @Nonempty
   public String getDataType ()
   {
