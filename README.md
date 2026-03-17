@@ -1,8 +1,9 @@
 # ph-genericode
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.helger/ph-genericode/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.helger/ph-genericode) 
+<!-- ph-badge-start -->
+[![Sonatype Central](https://maven-badges.sml.io/sonatype-central/com.helger/ph-genericode/badge.svg)](https://maven-badges.sml.io/sonatype-central/com.helger/ph-genericode/)
 [![javadoc](https://javadoc.io/badge2/com.helger/ph-genericode/javadoc.svg)](https://javadoc.io/doc/com.helger/ph-genericode)
-[![CodeCov](https://codecov.io/gh/phax/ph-genericode/branch/master/graph/badge.svg)](https://codecov.io/gh/phax/ph-genericode)
+<!-- ph-badge-end -->
 
 Java library for reading and writing OASIS GeneriCode and CVA files.
 It supports GeneriCode 0.4 and GeneriCode 1.0 as well as CVA 1.0.
