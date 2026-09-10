@@ -27,8 +27,7 @@ import com.helger.base.enforce.ValueEnforcer;
 import com.helger.base.tostring.ToStringGenerator;
 
 /**
- * This class represents a single column definition when converting an Excel
- * sheet into a code list.
+ * This class represents a single column definition when converting an Excel sheet into a code list.
  *
  * @author Philip Helger
  * @param <USE_TYPE>
@@ -102,8 +101,8 @@ public class ExcelReadColumn <USE_TYPE extends Serializable> implements Serializ
   }
 
   /**
-   * @return <code>true</code> if this is a key column, <code>false</code>
-   *         otherwise. Only required columns can be key columns.
+   * @return <code>true</code> if this is a key column, <code>false</code> otherwise. Only required
+   *         columns can be key columns.
    */
   public boolean isKeyColumn ()
   {

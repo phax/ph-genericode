@@ -69,7 +69,7 @@ public final class Genericode10EN16931CodeListMarshallerTest
      * <Value ColumnRef="Name"> <SimpleValue>Afghani</SimpleValue> </Value> </Row>
      */
     final List <Row> rows = aSimpleCodeList.getRow ();
-    rows.sort ( (lhs, rhs) -> {
+    rows.sort ((lhs, rhs) -> {
       // get SOME_CODE the content of <Value
       // ColumnRef="Code"><SimpleValue>SOME_CODE</SimpleValue>
       final String lhsCode = Genericode10Helper.getRowValue (lhs, "Code");

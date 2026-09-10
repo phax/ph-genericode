@@ -73,8 +73,8 @@ public class ExcelReadOptions <USE_TYPE extends Serializable> implements Seriali
   }
 
   /**
-   * @return The number of lines to skip before the header row starts. Default
-   *         is {@value #DEFAULT_LINES_TO_SKIP}.
+   * @return The number of lines to skip before the header row starts. Default is
+   *         {@value #DEFAULT_LINES_TO_SKIP}.
    */
   @Nonnegative
   public int getLinesToSkip ()
@@ -105,8 +105,8 @@ public class ExcelReadOptions <USE_TYPE extends Serializable> implements Seriali
   }
 
   /**
-   * @return The line index, where the long names reside. If this value is &lt;
-   *         0 than no long name is used.
+   * @return The line index, where the long names reside. If this value is &lt; 0 than no long name
+   *         is used.
    */
   public int getLineIndexLongName ()
   {
@@ -123,11 +123,10 @@ public class ExcelReadOptions <USE_TYPE extends Serializable> implements Seriali
    * @param eUseType
    *        Optional or required?
    * @param sDataType
-   *        The XSD data type to be used in Genericode. Use "string" if you're
-   *        unsure.
+   *        The XSD data type to be used in Genericode. Use "string" if you're unsure.
    * @param bKeyColumn
-   *        <code>true</code> if this is a key column, <code>false</code>
-   *        otherwise. Only required columns can be key columns.
+   *        <code>true</code> if this is a key column, <code>false</code> otherwise. Only required
+   *        columns can be key columns.
    * @return this
    */
   @NonNull

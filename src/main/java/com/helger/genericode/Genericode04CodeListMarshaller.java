@@ -21,8 +21,8 @@ import com.helger.genericode.v04.ObjectFactory;
 import com.helger.jaxb.GenericJAXBMarshaller;
 
 /**
- * This is the reader and writer for Genericode 0.4 code lists. This class may
- * be derived to override protected methods from {@link GenericJAXBMarshaller}.
+ * This is the reader and writer for Genericode 0.4 code lists. This class may be derived to
+ * override protected methods from {@link GenericJAXBMarshaller}.
  *
  * @author Philip Helger
  */
